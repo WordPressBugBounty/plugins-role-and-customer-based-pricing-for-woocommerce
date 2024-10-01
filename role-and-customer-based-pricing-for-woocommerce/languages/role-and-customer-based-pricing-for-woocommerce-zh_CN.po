@@ -1,0 +1,698 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Role and Customer Based Pricing for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-15 23:02+0000\n"
+"PO-Revision-Date: 2022-02-16 09:10+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.8; wp-5.9\n"
+"X-Domain: role-and-customer-based-pricing-for-woocommerce"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:48
+msgid "Account"
+msgstr "帐户"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:22
+msgid "Active"
+msgstr "积极的"
+
+#: views/admin/role-management/list.php:20
+msgid "Add new role"
+msgstr "添加新角色"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:307
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:308
+msgid "Add Pricing Rule"
+msgstr "添加定价规则"
+
+#: views/admin/role-management/list.php:54
+msgid "Add Role"
+msgstr "添加角色"
+
+#: src/Settings/Sections/MainSection.php:48
+msgid "Add to cart label for non logged users"
+msgstr "为未登录的用户添加到购物车标签"
+
+#: views/admin/role-management/list.php:44
+msgid "Adopt all the capabilities from the selected role."
+msgstr "采用所选角色的所有功能。"
+
+#. %s: count of capabilities
+#: src/RoleManagement/RolesTable.php:79
+#, php-format
+msgid "and %d more..."
+msgstr "还有 %d 更多..."
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:56
+msgid "Applied to every product"
+msgstr "适用于每一件产品"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:54
+msgid "Applied to every user"
+msgstr "适用于每一位用户"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:31
+msgid "Apply for categories"
+msgstr "申请类别"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:53
+msgid "Apply for specific products"
+msgstr "申请特定产品"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:132
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:163
+msgid "Available in the premium version."
+msgstr "在高级版本中可用。"
+
+#: src/RoleManagement/RolesTable.php:29
+msgid "Capabilities"
+msgstr "能力"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:35
+msgid "Categories: "
+msgstr "分类："
+
+#: src/Settings/Sections/MainSection.php:49
+msgid ""
+"Change default Add to cart label to something else to be displayed for non-"
+"logged users"
+msgstr "将默认添加到购物车标签更改为其他内容，以便为未登录的用户显示"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:49
+msgid ""
+"Choose the categories for which this pricing rule will apply. The rule "
+"applies to all products in the category."
+msgstr "选择适用此定价规则的类别。该规则适用于该类别中的所有产品。"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:28
+msgid "Choose the products and/or categories to apply the pricing rule"
+msgstr "选择要应用定价规则的产品和/或类别"
+
+#: views/admin/product-page/role-specific-pricing/index.php:26
+msgid ""
+"Choose the role to create the new pricing rules that will apply to all users "
+"with that role."
+msgstr "选择角色以创建将应用于具有该角色的所有用户的新定价规则。"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:76
+msgid ""
+"Choose the user role and/or customers' accounts to apply the pricing rule"
+msgstr "选择用户角色和/或客户帐户以应用定价规则"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:96
+msgid ""
+"Choose to what user roles this rule will be relevant. Applies to all users "
+"with those roles."
+msgstr "选择与此规则相关的用户角色。适用于具有这些角色的所有用户。"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:52
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: views/admin/alerts/premium-thanking-alert.php:23
+msgid "Contact us"
+msgstr "联系我们"
+
+#: views/admin/alerts/upgrade-alert.php:33
+msgid "Contact Us!"
+msgstr "联系我们！"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:277
+msgid "Create a pricing rule"
+msgstr "创建定价规则"
+
+#: views/admin/product-page/role-specific-pricing/index.php:40
+msgid "Customer based pricing"
+msgstr "基于客户的定价"
+
+#: src/Services/Export/WooCommerce.php:173
+#: src/Services/Import/WooCommerce.php:207
+msgid "Customer-based discount"
+msgstr "基于客户的折扣"
+
+#: src/Services/Export/WooCommerce.php:178
+#: src/Services/Import/WooCommerce.php:212
+msgid "Customer-based maximum quantity"
+msgstr "基于客户的最大数量"
+
+#: src/Services/Export/WooCommerce.php:177
+#: src/Services/Import/WooCommerce.php:211
+msgid "Customer-based minimum quantity"
+msgstr "基于客户的最小数量"
+
+#: src/Services/Export/WooCommerce.php:172
+#: src/Services/Import/WooCommerce.php:206
+msgid "Customer-based pricing type"
+msgstr "基于客户的定价类型"
+
+#: src/Services/Export/WooCommerce.php:179
+#: src/Services/Import/WooCommerce.php:213
+msgid "Customer-based quantity step"
+msgstr "基于客户的数量步骤"
+
+#: src/Services/Export/WooCommerce.php:174
+#: src/Services/Import/WooCommerce.php:208
+msgid "Customer-based regular price"
+msgstr "基于客户的正常价格"
+
+#: src/Services/Export/WooCommerce.php:175
+#: src/Services/Import/WooCommerce.php:209
+msgid "Customer-based sale price"
+msgstr "基于客户的销售价格"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:11
+msgid "Customers"
+msgstr "顾客"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:43
+msgid "Customers: "
+msgstr "顾客："
+
+#: src/RoleManagement/RolesTable.php:52
+msgid "Delete"
+msgstr "删除"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:28
+msgid "Discount"
+msgstr "折扣"
+
+#: src/Services/Import/WPAllImport.php:179
+msgid "Discount amount"
+msgstr "折扣金额"
+
+#: src/Settings/Sections/PricingSection.php:23
+msgid "Display as"
+msgstr "展示为"
+
+#: views/admin/role-management/list.php:31
+msgid "Display name"
+msgstr "显示名称"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:309
+msgid "Edit Pricing Rule"
+msgstr "编辑定价规则"
+
+#: src/Settings/Sections/MainSection.php:32
+msgid "Error message when non-logged users add to cart"
+msgstr "未登录用户添加到购物车时的错误消息"
+
+#: src/Settings/Sections/PricingSection.php:29
+msgid "Exact set price"
+msgstr "确切的定价"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:312
+msgid "Find Pricing Rule"
+msgstr "查找定价规则"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:61
+msgid "Flat prices"
+msgstr "平价"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:56
+msgid "Go Premium"
+msgstr "去高级"
+
+#: views/admin/alerts/activation-alert.php:15
+msgid "here"
+msgstr "这里"
+
+#: src/Settings/Sections/MainSection.php:40
+msgid "Hide prices for non-logged users"
+msgstr "隐藏未登录用户的价格"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://meow-crew.com"
+msgstr "https://meow-crew.com"
+
+#: views/admin/product-page/role-specific-pricing/index.php:41
+msgid ""
+"If you need to make pricing rules only for specific customers (not whole "
+"user role), choose the customer name here"
+msgstr "如果您只需要为特定客户（而不是整个用户角色）制定定价规则，请在此处选择客户名称"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:100
+msgid "Include specific customers"
+msgstr "包括特定客户"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:79
+msgid "Include user roles"
+msgstr "包括用户角色"
+
+#: views/admin/role-management/list.php:35
+msgid "Inherit role"
+msgstr "继承角色"
+
+#: src/RoleManagement/Actions/NewRoleAction.php:39
+msgid "Invalid inherited role."
+msgstr "继承的角色无效。"
+
+#: src/RoleManagement/Actions/RoleManagementPageAction.php:57
+msgid "Invalid Nonce"
+msgstr "无效的随机数"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:30
+msgid "Invalid role name"
+msgstr "角色名称无效"
+
+#: src/Settings/Sections/MainSection.php:52
+msgid "Leave it empty to keep as it is"
+msgstr "将其留空以保持原样"
+
+#: src/Services/Import/WPAllImport.php:222
+msgid "Maximum order quantity"
+msgstr "最大订货量"
+
+#. %s: maximum quantity
+#: src/Services/QuantityManagementService.php:135
+#, php-format
+msgid "Maximum order quantity for the product is %s"
+msgstr "产品的最大订购数量为 %s"
+
+#. %s: maximum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:22
+#, php-format
+msgid "Maximum: %s"
+msgstr "最大值：%s"
+
+#. Author of the plugin
+msgid "Meow Crew"
+msgstr "喵船员"
+
+#: src/Services/Import/WPAllImport.php:211
+msgid "Minimum order quantity"
+msgstr "最小起订量"
+
+#. %s: minimum quantity
+#: src/Services/QuantityManagementService.php:124
+#, php-format
+msgid "Minimum order quantity for the product is %s"
+msgstr "产品的最小订购量为 %s"
+
+#. %s: minimum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:20
+#, php-format
+msgid "Minimum: %s"
+msgstr "最小值：%s"
+
+#: views/admin/alerts/premium-thanking-alert.php:21
+msgid "My Account"
+msgstr "我的帐户"
+
+#: src/RoleManagement/RolesTable.php:28 views/admin/role-management/list.php:27
+msgid "Name"
+msgstr "名称"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:310
+msgid "New Pricing Rule"
+msgstr "新定价规则"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:314
+msgid "No pricing rule in trash"
+msgstr "垃圾箱中没有定价规则"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:313
+msgid "No pricing rules ware found"
+msgstr "未找到定价规则"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:13
+msgid "Not set"
+msgstr "没有设置"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:83
+msgid ""
+"Note that prices indicated below will be applied to the whole range of "
+"products you specified in the products/categories sections. Be careful to "
+"not mess up the pricing."
+msgstr "请注意，下面显示的价格将适用于您在产品/类别部分中指定的整个产品系列。小心不要弄乱定价。"
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:42
+msgid "Off"
+msgstr "离开"
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:38
+msgid "On"
+msgstr "在"
+
+#: src/Settings/Settings.php:215 src/Settings/Sections/MainSection.php:51
+msgid "Only for registered clients"
+msgstr "仅适用于注册客户"
+
+#. %s: quantity step
+#: src/Services/QuantityManagementService.php:146
+#, php-format
+msgid "Order quantity must be multiple for %s"
+msgstr "%s 的订单数量必须是倍数"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:72
+msgid "Percentage discount"
+msgstr "百分比折扣"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:72
+msgid "Pick up products for which you want to apply the pricing rule."
+msgstr "选择您要应用定价规则的产品。"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:118
+msgid "Pick up separate user accounts, which will be affected by this rule. "
+msgstr "选择单独的用户帐户，这些帐户将受此规则影响。"
+
+#. %s: login page url
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+#, php-format
+msgid "Please enter %s to make a purchase"
+msgstr "请输入 %s 进行购买"
+
+#: src/Settings/Sections/MainSection.php:24
+msgid "Prevent purchase for non-logged users"
+msgstr "防止未登录用户购买"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:164
+#: src/Settings/Sections/PricingSection.php:9
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:9
+msgid "Pricing"
+msgstr "价钱"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:305
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:306
+msgid "Pricing rule"
+msgstr "定价规则"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:316
+msgid "Pricing rules"
+msgstr "定价规则"
+
+#: src/Services/Import/WPAllImport.php:170
+msgid "Pricing type"
+msgstr "定价类型"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:158
+msgid "Product quantity control"
+msgstr "产品数量控制"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:10
+msgid "Products"
+msgstr "产品"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:45
+msgid "Products: "
+msgstr "产品："
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:8
+msgid "Quantity rules"
+msgstr "数量规则"
+
+#: src/Services/Import/WPAllImport.php:233
+msgid "Quantity step"
+msgstr "数量步骤"
+
+#. %s: quantity step
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:24
+#, php-format
+msgid "Quantity step: %s"
+msgstr "数量步：%s"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:31
+msgid "Reactivate"
+msgstr "重新激活"
+
+#: src/Services/Import/WPAllImport.php:189
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:19
+msgid "Regular price"
+msgstr "正常价格"
+
+#: src/Settings/Sections/MainSection.php:10
+msgid "Role and Customer Based Pricing"
+msgstr "基于角色和客户的定价"
+
+#: src/Services/Import/WPAllImport.php:31
+msgid "Role and Customer based pricing"
+msgstr "基于角色和客户的定价"
+
+#. Name of the plugin
+msgid "Role and Customer Based Pricing for WooCommerce"
+msgstr "WooCommerce 的角色和基于客户的定价"
+
+#. %s = required plugin
+#: src/RoleAndCustomerBasedPricingPlugin.php:116
+#, php-format
+msgid ""
+"Role and Customer Based Pricing for WooCommerce requires %s plugin to be "
+"active!"
+msgstr "WooCommerce 的基于角色和客户的定价需要 %s 插件处于活动状态！"
+
+#: views/admin/product-page/role-specific-pricing/index.php:25
+msgid "Role based pricing"
+msgstr "基于角色的定价"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:14
+msgid "Role deleted successfully."
+msgstr "角色删除成功。"
+
+#: src/RoleManagement/Actions/NewRoleAction.php:33
+msgid "Role name is required."
+msgstr "角色名称是必需的。"
+
+#: src/Services/Export/WooCommerce.php:164
+#: src/Services/Import/WooCommerce.php:198
+msgid "Role-based discount"
+msgstr "基于角色的折扣"
+
+#: src/Services/Export/WooCommerce.php:169
+#: src/Services/Import/WooCommerce.php:203
+msgid "Role-based maximum quantity"
+msgstr "基于角色的最大数量"
+
+#: src/Services/Export/WooCommerce.php:168
+#: src/Services/Import/WooCommerce.php:202
+msgid "Role-based minimum quantity"
+msgstr "基于角色的最小数量"
+
+#: src/Services/Export/WooCommerce.php:163
+#: src/Services/Import/WooCommerce.php:197
+msgid "Role-based pricing type"
+msgstr "基于角色的定价类型"
+
+#: src/Services/Export/WooCommerce.php:170
+#: src/Services/Import/WooCommerce.php:204
+msgid "Role-based quantity step"
+msgstr "基于角色的数量步骤"
+
+#: src/Services/Export/WooCommerce.php:165
+#: src/Services/Import/WooCommerce.php:199
+msgid "Role-based regular price"
+msgstr "基于角色的正常价格"
+
+#: src/Services/Export/WooCommerce.php:166
+#: src/Services/Import/WooCommerce.php:200
+msgid "Role-based sale price"
+msgstr "基于角色的售价"
+
+#: src/Settings/Settings.php:160
+msgid "Role\\Customer Based Pricing"
+msgstr "角色\\基于客户的定价"
+
+#: src/Admin/ProductPage/RoleSpecificPricingTab.php:21
+msgid "Role\\User pricing"
+msgstr "角色\\用户定价"
+
+#: src/RoleManagement/RoleManagementPage.php:36
+#: src/RoleManagement/RoleManagementPage.php:37
+#: views/admin/role-management/list.php:14
+msgid "Roles Management"
+msgstr "角色管理"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:31
+msgid "Roles: "
+msgstr "角色："
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:159
+msgid "Rules"
+msgstr "规则"
+
+#: src/Services/Import/WPAllImport.php:200
+#: src/Settings/Sections/PricingSection.php:30
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:23
+msgid "Sale price"
+msgstr "销售价格"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:35
+msgid "Search for a category&hellip;"
+msgstr "搜索类别..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:57
+msgid "Search for a product&hellip;"
+msgstr "搜索产品..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:83
+msgid "Select for a customer role&hellip;"
+msgstr "选择客户角色..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:106
+#: views/admin/product-page/role-specific-pricing/identifiers/customer-specific.php:13
+msgid "Select for a customer&hellip;"
+msgstr "为客户选择..."
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:44
+msgid "Settings"
+msgstr "设置"
+
+#: src/Settings/Sections/MainSection.php:43
+msgid "Show all prices in the store only for logged users"
+msgstr "仅为登录用户显示商店中的所有价格"
+
+#: src/Services/Import/WPAllImport.php:240
+msgid ""
+"Specify by how many product quantity will increase or decrease when a "
+"customer adds the product to the cart"
+msgstr "指定当客户将产品添加到购物车时将增加或减少多少产品数量"
+
+#: src/Services/Import/WPAllImport.php:196
+msgid ""
+"Specify exact regular price expressed in numerical value (without currency "
+"symbol)"
+msgstr "指定以数值表示的准确常规价格（无货币符号）"
+
+#: src/Services/Import/WPAllImport.php:207
+msgid ""
+"Specify exact sale price (crossed out price) expressed in numerical value "
+"(without currency symbol)"
+msgstr "指定以数值表示的准确销售价格（划掉的价格）（不带货币符号）"
+
+#: src/Services/Import/WPAllImport.php:184
+msgid ""
+"Specify number of discount ('50', not '50%') if using percentage pricing "
+"type."
+msgstr "如果使用百分比定价类型，请指定折扣数量（“50”，而不是“50%”）。"
+
+#: src/Services/Import/WPAllImport.php:229
+msgid ""
+"Specify the maximum number of products available for purchase by this role "
+"in one order."
+msgstr "指定此角色在一个订单中可购买的最大产品数量。"
+
+#: src/Services/Import/WPAllImport.php:218
+msgid ""
+"Specify the minimal amount of products that one user can purchase for this "
+"role."
+msgstr "指定一个用户可以为此角色购买的最小产品数量。"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:17
+msgid "Standard roles cannot be deleted or modified."
+msgstr "标准角色不能删除或修改。"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:9
+msgid "Status"
+msgstr "地位"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:30
+msgid "Suspend"
+msgstr "暂停"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:16
+msgid "Suspended"
+msgstr "暂停"
+
+#: views/admin/alerts/activation-alert.php:14
+msgid ""
+"Thanks for installing Tiered Price Table for WooCommerce! You can customize "
+"it "
+msgstr "感谢您为 WooCommerce 安装分层价格表！你可以自定义它"
+
+#: views/admin/alerts/premium-thanking-alert.php:14
+msgid "Thanks! You are using premium version of the plugin!"
+msgstr "谢谢！您正在使用插件的高级版本！"
+
+#: src/Entity/PricingRule.php:307
+msgid "The discount is not set."
+msgstr "未设置折扣。"
+
+#: src/Entity/PricingRule.php:303
+msgid "The pricing fields must be filled."
+msgstr "必须填写定价字段。"
+
+#: src/RoleManagement/Actions/NewRoleAction.php:25
+msgid "The role has been added successfully."
+msgstr "角色已成功添加。"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:50
+msgid "The rule reactivated successfully."
+msgstr "规则重新激活成功。"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:48
+msgid "The rule suspended successfully."
+msgstr "规则成功暂停。"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:271
+msgid ""
+"There are no pricing rules yet. To create pricing dependencies on user "
+"roles/customers click on the button below."
+msgstr "目前还没有定价规则。要创建对用户角色/客户的定价依赖关系，请单击下面的按钮。"
+
+#: src/Settings/CustomOptions/PremiumSelectOption.php:106
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:134
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:165
+msgid "Upgrade now"
+msgstr "现在升级"
+
+#: views/admin/alerts/upgrade-alert.php:31
+msgid "Upgrade to Premium!"
+msgstr "升级到高级！"
+
+#: src/Services/Import/WPAllImport.php:175
+msgid "Use 'flat' or 'percentage' to specify the pricing type for the role"
+msgstr "使用“flat”或“percentage”指定角色的定价类型"
+
+#. Description of the plugin
+msgid ""
+"Use this plugin to create pricing rules based on user roles or individual "
+"pricing for various customers."
+msgstr "使用此插件根据用户角色或不同客户的个人定价创建定价规则。"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:32
+msgid "user role"
+msgstr "用户角色"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:35
+msgid "users in this rule"
+msgstr "此规则中的用户"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:311
+msgid "View Pricing Rule"
+msgstr "查看定价规则"
+
+#: src/Settings/Sections/MainSection.php:27
+msgid "When the users isn't logged in, they'll not be able to make a purchase"
+msgstr "当用户未登录时，他们将无法进行购买"
+
+#: src/Settings/Sections/PricingSection.php:13
+msgid ""
+"When you use percentage discounts to assign prices for specific users, you "
+"can choose to display either exact prices or show it as the sale price."
+msgstr "当您使用百分比折扣为特定用户分配价格时，您可以选择显示确切价格或将其显示为销售价格。"
+
+#: views/admin/alerts/upgrade-alert.php:22
+msgid ""
+"You are using the free version of plugin. Upgrade to premium version to get "
+"all features."
+msgstr "您正在使用插件的免费版本。升级到高级版本以获得所有功能。"
+
+#: src/Settings/Sections/MainSection.php:14
+msgid ""
+"You can set up different scenarios for how the plugin should handle "
+"unauthorized users here."
+msgstr "您可以在此处设置插件应如何处理未经授权的用户的不同方案。"
+
+#: src/RoleManagement/RolesTable.php:54
+msgid "You cannot delete standard roles"
+msgstr "您不能删除标准角色"
+
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+msgid "your account"
+msgstr "您的帐户"

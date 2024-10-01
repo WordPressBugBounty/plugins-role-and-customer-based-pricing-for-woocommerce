@@ -1,0 +1,739 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Role and Customer Based Pricing for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-15 23:02+0000\n"
+"PO-Revision-Date: 2022-02-16 09:14+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: Danish\n"
+"Language: da_DK\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.8; wp-5.9\n"
+"X-Domain: role-and-customer-based-pricing-for-woocommerce"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:48
+msgid "Account"
+msgstr "Konto"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:22
+msgid "Active"
+msgstr "Aktiv"
+
+#: views/admin/role-management/list.php:20
+msgid "Add new role"
+msgstr "Tilføj ny rolle"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:307
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:308
+msgid "Add Pricing Rule"
+msgstr "Tilføj prisregel"
+
+#: views/admin/role-management/list.php:54
+msgid "Add Role"
+msgstr "Tilføj rolle"
+
+#: src/Settings/Sections/MainSection.php:48
+msgid "Add to cart label for non logged users"
+msgstr "Tilføj til kurv etiket for ikke-loggede brugere"
+
+#: views/admin/role-management/list.php:44
+msgid "Adopt all the capabilities from the selected role."
+msgstr "Overtag alle funktionerne fra den valgte rolle."
+
+#. %s: count of capabilities
+#: src/RoleManagement/RolesTable.php:79
+#, php-format
+msgid "and %d more..."
+msgstr "og %d mere..."
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:56
+msgid "Applied to every product"
+msgstr "Anvendes på hvert produkt"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:54
+msgid "Applied to every user"
+msgstr "Gælder for alle brugere"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:31
+msgid "Apply for categories"
+msgstr "Ansøg om kategorier"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:53
+msgid "Apply for specific products"
+msgstr "Ansøg om specifikke produkter"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:132
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:163
+msgid "Available in the premium version."
+msgstr "Fås i premium-versionen."
+
+#: src/RoleManagement/RolesTable.php:29
+msgid "Capabilities"
+msgstr "Evner"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:35
+msgid "Categories: "
+msgstr "Kategorier:"
+
+#: src/Settings/Sections/MainSection.php:49
+msgid ""
+"Change default Add to cart label to something else to be displayed for non-"
+"logged users"
+msgstr ""
+"Skift standard Føj til kurv-etiket til noget andet, der skal vises for ikke-"
+"loggede brugere"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:49
+msgid ""
+"Choose the categories for which this pricing rule will apply. The rule "
+"applies to all products in the category."
+msgstr ""
+"Vælg de kategorier, som denne prisregel gælder for. Reglen gælder for alle "
+"produkter i kategorien."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:28
+msgid "Choose the products and/or categories to apply the pricing rule"
+msgstr "Vælg de produkter og/eller kategorier for at anvende prisreglen"
+
+#: views/admin/product-page/role-specific-pricing/index.php:26
+msgid ""
+"Choose the role to create the new pricing rules that will apply to all users "
+"with that role."
+msgstr ""
+"Vælg rollen for at oprette de nye prissætningsregler, der gælder for alle "
+"brugere med den pågældende rolle."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:76
+msgid ""
+"Choose the user role and/or customers' accounts to apply the pricing rule"
+msgstr ""
+"Vælg brugerrollen og/eller kundernes konti for at anvende prissætningsreglen"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:96
+msgid ""
+"Choose to what user roles this rule will be relevant. Applies to all users "
+"with those roles."
+msgstr ""
+"Vælg for hvilke brugerroller denne regel vil være relevant. Gælder for alle "
+"brugere med disse roller."
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:52
+msgid "Contact Us"
+msgstr "Kontakt os"
+
+#: views/admin/alerts/premium-thanking-alert.php:23
+msgid "Contact us"
+msgstr "Kontakt os"
+
+#: views/admin/alerts/upgrade-alert.php:33
+msgid "Contact Us!"
+msgstr "Kontakt os!"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:277
+msgid "Create a pricing rule"
+msgstr "Opret en prisfastsættelsesregel"
+
+#: views/admin/product-page/role-specific-pricing/index.php:40
+msgid "Customer based pricing"
+msgstr "Kundebaseret prisfastsættelse"
+
+#: src/Services/Export/WooCommerce.php:173
+#: src/Services/Import/WooCommerce.php:207
+msgid "Customer-based discount"
+msgstr "Kundebaseret rabat"
+
+#: src/Services/Export/WooCommerce.php:178
+#: src/Services/Import/WooCommerce.php:212
+msgid "Customer-based maximum quantity"
+msgstr "Kundebaseret maksimal mængde"
+
+#: src/Services/Export/WooCommerce.php:177
+#: src/Services/Import/WooCommerce.php:211
+msgid "Customer-based minimum quantity"
+msgstr "Kundebaseret minimumsmængde"
+
+#: src/Services/Export/WooCommerce.php:172
+#: src/Services/Import/WooCommerce.php:206
+msgid "Customer-based pricing type"
+msgstr "Kundebaseret pristype"
+
+#: src/Services/Export/WooCommerce.php:179
+#: src/Services/Import/WooCommerce.php:213
+msgid "Customer-based quantity step"
+msgstr "Kundebaseret mængdetrin"
+
+#: src/Services/Export/WooCommerce.php:174
+#: src/Services/Import/WooCommerce.php:208
+msgid "Customer-based regular price"
+msgstr "Kundebaseret normalpris"
+
+#: src/Services/Export/WooCommerce.php:175
+#: src/Services/Import/WooCommerce.php:209
+msgid "Customer-based sale price"
+msgstr "Kundebaseret udsalgspris"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:11
+msgid "Customers"
+msgstr "Kunder"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:43
+msgid "Customers: "
+msgstr "Kunder:"
+
+#: src/RoleManagement/RolesTable.php:52
+msgid "Delete"
+msgstr "Slet"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:28
+msgid "Discount"
+msgstr "Rabat"
+
+#: src/Services/Import/WPAllImport.php:179
+msgid "Discount amount"
+msgstr "Rabatbeløb"
+
+#: src/Settings/Sections/PricingSection.php:23
+msgid "Display as"
+msgstr "Vis som"
+
+#: views/admin/role-management/list.php:31
+msgid "Display name"
+msgstr "Vist navn"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:309
+msgid "Edit Pricing Rule"
+msgstr "Rediger prissætningsregel"
+
+#: src/Settings/Sections/MainSection.php:32
+msgid "Error message when non-logged users add to cart"
+msgstr "Fejlmeddelelse, når ikke-loggede brugere lægger i indkøbskurven"
+
+#: src/Settings/Sections/PricingSection.php:29
+msgid "Exact set price"
+msgstr "Præcis fast pris"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:312
+msgid "Find Pricing Rule"
+msgstr "Find prisregel"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:61
+msgid "Flat prices"
+msgstr "Flade priser"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:56
+msgid "Go Premium"
+msgstr "Gå til Premium"
+
+#: views/admin/alerts/activation-alert.php:15
+msgid "here"
+msgstr "her"
+
+#: src/Settings/Sections/MainSection.php:40
+msgid "Hide prices for non-logged users"
+msgstr "Skjul priser for ikke-loggede brugere"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://meow-crew.com"
+msgstr "https://meow-crew.com"
+
+#: views/admin/product-page/role-specific-pricing/index.php:41
+msgid ""
+"If you need to make pricing rules only for specific customers (not whole "
+"user role), choose the customer name here"
+msgstr ""
+"Hvis du kun skal lave prisregler for specifikke kunder (ikke hele "
+"brugerrollen), skal du vælge kundenavnet her"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:100
+msgid "Include specific customers"
+msgstr "Inkluder specifikke kunder"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:79
+msgid "Include user roles"
+msgstr "Inkluder brugerroller"
+
+#: views/admin/role-management/list.php:35
+msgid "Inherit role"
+msgstr "Arve rolle"
+
+#: src/RoleManagement/Actions/NewRoleAction.php:39
+msgid "Invalid inherited role."
+msgstr "Ugyldig nedarvet rolle."
+
+#: src/RoleManagement/Actions/RoleManagementPageAction.php:57
+msgid "Invalid Nonce"
+msgstr "Ugyldig nonce"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:30
+msgid "Invalid role name"
+msgstr "Ugyldigt rollenavn"
+
+#: src/Settings/Sections/MainSection.php:52
+msgid "Leave it empty to keep as it is"
+msgstr "Lad den stå tom for at beholde den, som den er"
+
+#: src/Services/Import/WPAllImport.php:222
+msgid "Maximum order quantity"
+msgstr "Maksimal ordremængde"
+
+#. %s: maximum quantity
+#: src/Services/QuantityManagementService.php:135
+#, php-format
+msgid "Maximum order quantity for the product is %s"
+msgstr "Maksimal ordremængde for produktet er %s"
+
+#. %s: maximum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:22
+#, php-format
+msgid "Maximum: %s"
+msgstr "Maksimum: %s"
+
+#. Author of the plugin
+msgid "Meow Crew"
+msgstr "Mjau besætning"
+
+#: src/Services/Import/WPAllImport.php:211
+msgid "Minimum order quantity"
+msgstr "Minimum ordremængde"
+
+#. %s: minimum quantity
+#: src/Services/QuantityManagementService.php:124
+#, php-format
+msgid "Minimum order quantity for the product is %s"
+msgstr "Minimum ordremængde for produktet er %s"
+
+#. %s: minimum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:20
+#, php-format
+msgid "Minimum: %s"
+msgstr "Minimum: %s"
+
+#: views/admin/alerts/premium-thanking-alert.php:21
+msgid "My Account"
+msgstr "Min konto"
+
+#: src/RoleManagement/RolesTable.php:28 views/admin/role-management/list.php:27
+msgid "Name"
+msgstr "Navn"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:310
+msgid "New Pricing Rule"
+msgstr "Ny prisregel"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:314
+msgid "No pricing rule in trash"
+msgstr "Ingen prisfastsættelsesregel i skraldespanden"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:313
+msgid "No pricing rules ware found"
+msgstr "Der blev ikke fundet nogen prisregler"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:13
+msgid "Not set"
+msgstr "Ikke indstillet"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:83
+msgid ""
+"Note that prices indicated below will be applied to the whole range of "
+"products you specified in the products/categories sections. Be careful to "
+"not mess up the pricing."
+msgstr ""
+"Bemærk, at priserne angivet nedenfor vil blive anvendt på hele rækken af "
+"produkter, du har angivet i produkt-/kategorisektionerne. Pas på ikke at "
+"ødelægge priserne."
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:42
+msgid "Off"
+msgstr "Af"
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:38
+msgid "On"
+msgstr "På"
+
+#: src/Settings/Settings.php:215 src/Settings/Sections/MainSection.php:51
+msgid "Only for registered clients"
+msgstr "Kun for registrerede kunder"
+
+#. %s: quantity step
+#: src/Services/QuantityManagementService.php:146
+#, php-format
+msgid "Order quantity must be multiple for %s"
+msgstr "Ordremængde skal være flere for %s"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:72
+msgid "Percentage discount"
+msgstr "Procent rabat"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:72
+msgid "Pick up products for which you want to apply the pricing rule."
+msgstr "Afhent produkter, som du ønsker at anvende prisreglen for."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:118
+msgid "Pick up separate user accounts, which will be affected by this rule. "
+msgstr "Hent separate brugerkonti, som vil blive påvirket af denne regel."
+
+#. %s: login page url
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+#, php-format
+msgid "Please enter %s to make a purchase"
+msgstr "Indtast %s for at foretage et køb"
+
+#: src/Settings/Sections/MainSection.php:24
+msgid "Prevent purchase for non-logged users"
+msgstr "Undgå køb for ikke-loggede brugere"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:164
+#: src/Settings/Sections/PricingSection.php:9
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:9
+msgid "Pricing"
+msgstr "Prissætning"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:305
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:306
+msgid "Pricing rule"
+msgstr "Reglen om prissætning"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:316
+msgid "Pricing rules"
+msgstr "Prisregler"
+
+#: src/Services/Import/WPAllImport.php:170
+msgid "Pricing type"
+msgstr "Pristype"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:158
+msgid "Product quantity control"
+msgstr "Produktmængdekontrol"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:10
+msgid "Products"
+msgstr "Produkter"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:45
+msgid "Products: "
+msgstr "Produkter:"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:8
+msgid "Quantity rules"
+msgstr "Mængderegler"
+
+#: src/Services/Import/WPAllImport.php:233
+msgid "Quantity step"
+msgstr "Mængde trin"
+
+#. %s: quantity step
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:24
+#, php-format
+msgid "Quantity step: %s"
+msgstr "Mængdetrin: %s"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:31
+msgid "Reactivate"
+msgstr "Genaktiver"
+
+#: src/Services/Import/WPAllImport.php:189
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:19
+msgid "Regular price"
+msgstr "Normal pris"
+
+#: src/Settings/Sections/MainSection.php:10
+msgid "Role and Customer Based Pricing"
+msgstr "Rolle- og kundebaseret prisfastsættelse"
+
+#: src/Services/Import/WPAllImport.php:31
+msgid "Role and Customer based pricing"
+msgstr "Rolle- og kundebaseret prisfastsættelse"
+
+#. Name of the plugin
+msgid "Role and Customer Based Pricing for WooCommerce"
+msgstr "WooCommerce Role Based Pricing by Meow Crew"
+
+#. %s = required plugin
+#: src/RoleAndCustomerBasedPricingPlugin.php:116
+#, php-format
+msgid ""
+"Role and Customer Based Pricing for WooCommerce requires %s plugin to be "
+"active!"
+msgstr ""
+"WooCommerce Role Based Pricing by Meow Crew kræver %s plugin for at være "
+"aktivt!"
+
+#: views/admin/product-page/role-specific-pricing/index.php:25
+msgid "Role based pricing"
+msgstr "Rollebaseret prissætning"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:14
+msgid "Role deleted successfully."
+msgstr "Rollen blev slettet."
+
+#: src/RoleManagement/Actions/NewRoleAction.php:33
+msgid "Role name is required."
+msgstr "Rollenavn er påkrævet."
+
+#: src/Services/Export/WooCommerce.php:164
+#: src/Services/Import/WooCommerce.php:198
+msgid "Role-based discount"
+msgstr "Rollebaseret rabat"
+
+#: src/Services/Export/WooCommerce.php:169
+#: src/Services/Import/WooCommerce.php:203
+msgid "Role-based maximum quantity"
+msgstr "Rollebaseret maksimal mængde"
+
+#: src/Services/Export/WooCommerce.php:168
+#: src/Services/Import/WooCommerce.php:202
+msgid "Role-based minimum quantity"
+msgstr "Rollebaseret minimumsmængde"
+
+#: src/Services/Export/WooCommerce.php:163
+#: src/Services/Import/WooCommerce.php:197
+msgid "Role-based pricing type"
+msgstr "Rollebaseret pristype"
+
+#: src/Services/Export/WooCommerce.php:170
+#: src/Services/Import/WooCommerce.php:204
+msgid "Role-based quantity step"
+msgstr "Rollebaseret mængdetrin"
+
+#: src/Services/Export/WooCommerce.php:165
+#: src/Services/Import/WooCommerce.php:199
+msgid "Role-based regular price"
+msgstr "Rollebaseret almindelig pris"
+
+#: src/Services/Export/WooCommerce.php:166
+#: src/Services/Import/WooCommerce.php:200
+msgid "Role-based sale price"
+msgstr "Rollebaseret salgspris"
+
+#: src/Settings/Settings.php:160
+msgid "Role\\Customer Based Pricing"
+msgstr "Rolle\\Kundebaseret prisfastsættelse"
+
+#: src/Admin/ProductPage/RoleSpecificPricingTab.php:21
+msgid "Role\\User pricing"
+msgstr "Rolle\\Brugerpriser"
+
+#: src/RoleManagement/RoleManagementPage.php:36
+#: src/RoleManagement/RoleManagementPage.php:37
+#: views/admin/role-management/list.php:14
+msgid "Roles Management"
+msgstr "Rollestyring"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:31
+msgid "Roles: "
+msgstr "Roller:"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:159
+msgid "Rules"
+msgstr "Regler"
+
+#: src/Services/Import/WPAllImport.php:200
+#: src/Settings/Sections/PricingSection.php:30
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:23
+msgid "Sale price"
+msgstr "Udsalgspris"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:35
+msgid "Search for a category&hellip;"
+msgstr "Søg efter en kategori..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:57
+msgid "Search for a product&hellip;"
+msgstr "Søg efter et produkt..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:83
+msgid "Select for a customer role&hellip;"
+msgstr "Vælg til en kunderolle..."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:106
+#: views/admin/product-page/role-specific-pricing/identifiers/customer-specific.php:13
+msgid "Select for a customer&hellip;"
+msgstr "Vælg for en kunde..."
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:44
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: src/Settings/Sections/MainSection.php:43
+msgid "Show all prices in the store only for logged users"
+msgstr "Vis alle priser i butikken kun for loggede brugere"
+
+#: src/Services/Import/WPAllImport.php:240
+msgid ""
+"Specify by how many product quantity will increase or decrease when a "
+"customer adds the product to the cart"
+msgstr ""
+"Angiv hvor mange produktmængder, der vil stige eller falde, når en kunde "
+"tilføjer produktet til indkøbskurven"
+
+#: src/Services/Import/WPAllImport.php:196
+msgid ""
+"Specify exact regular price expressed in numerical value (without currency "
+"symbol)"
+msgstr ""
+"Angiv den nøjagtige almindelige pris udtrykt i numerisk værdi (uden "
+"valutasymbol)"
+
+#: src/Services/Import/WPAllImport.php:207
+msgid ""
+"Specify exact sale price (crossed out price) expressed in numerical value "
+"(without currency symbol)"
+msgstr ""
+"Angiv nøjagtig salgspris (overstreget pris) udtrykt i numerisk værdi (uden "
+"valutasymbol)"
+
+#: src/Services/Import/WPAllImport.php:184
+msgid ""
+"Specify number of discount ('50', not '50%') if using percentage pricing "
+"type."
+msgstr ""
+"Angiv antallet af rabat ('50', ikke '50%), hvis du bruger den procentvise "
+"pristype."
+
+#: src/Services/Import/WPAllImport.php:229
+msgid ""
+"Specify the maximum number of products available for purchase by this role "
+"in one order."
+msgstr ""
+"Angiv det maksimale antal produkter, der er tilgængelige for køb af denne "
+"rolle i én ordre."
+
+#: src/Services/Import/WPAllImport.php:218
+msgid ""
+"Specify the minimal amount of products that one user can purchase for this "
+"role."
+msgstr ""
+"Angiv det minimale antal produkter, som én bruger kan købe til denne rolle."
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:17
+msgid "Standard roles cannot be deleted or modified."
+msgstr "Standardroller kan ikke slettes eller ændres."
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:9
+msgid "Status"
+msgstr "Status"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:30
+msgid "Suspend"
+msgstr "Suspendere"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:16
+msgid "Suspended"
+msgstr "Suspenderet"
+
+#: views/admin/alerts/activation-alert.php:14
+msgid ""
+"Thanks for installing Tiered Price Table for WooCommerce! You can customize "
+"it "
+msgstr ""
+"Tak, fordi du installerede WooCommerce Role Based Pricing by Meow Crew! Du "
+"kan tilpasse det"
+
+#: views/admin/alerts/premium-thanking-alert.php:14
+msgid "Thanks! You are using premium version of the plugin!"
+msgstr "Tak! Du bruger premium version af plugin!"
+
+#: src/Entity/PricingRule.php:307
+msgid "The discount is not set."
+msgstr "Rabatten er ikke fastsat."
+
+#: src/Entity/PricingRule.php:303
+msgid "The pricing fields must be filled."
+msgstr "Prisfelterne skal udfyldes."
+
+#: src/RoleManagement/Actions/NewRoleAction.php:25
+msgid "The role has been added successfully."
+msgstr "Rollen er blevet tilføjet."
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:50
+msgid "The rule reactivated successfully."
+msgstr "Reglen blev genaktiveret."
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:48
+msgid "The rule suspended successfully."
+msgstr "Reglen blev suspenderet."
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:271
+msgid ""
+"There are no pricing rules yet. To create pricing dependencies on user "
+"roles/customers click on the button below."
+msgstr ""
+"Der er endnu ingen prisregler. For at oprette prisafhængigheder for "
+"brugerroller/kunder skal du klikke på knappen nedenfor."
+
+#: src/Settings/CustomOptions/PremiumSelectOption.php:106
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:134
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:165
+msgid "Upgrade now"
+msgstr "Opgrader nu"
+
+#: views/admin/alerts/upgrade-alert.php:31
+msgid "Upgrade to Premium!"
+msgstr "Opgrader til Premium!"
+
+#: src/Services/Import/WPAllImport.php:175
+msgid "Use 'flat' or 'percentage' to specify the pricing type for the role"
+msgstr "Brug 'flad' eller 'procent' til at angive pristypen for rollen"
+
+#. Description of the plugin
+msgid ""
+"Use this plugin to create pricing rules based on user roles or individual "
+"pricing for various customers."
+msgstr ""
+"Brug dette plugin til at oprette prissætningsregler baseret på brugerroller "
+"eller individuelle priser for forskellige kunder."
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:32
+msgid "user role"
+msgstr "brugerrolle"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:35
+msgid "users in this rule"
+msgstr "brugere i denne regel"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:311
+msgid "View Pricing Rule"
+msgstr "Se prisreglen"
+
+#: src/Settings/Sections/MainSection.php:27
+msgid "When the users isn't logged in, they'll not be able to make a purchase"
+msgstr ""
+"Når brugerne ikke er logget ind, vil de ikke være i stand til at foretage et "
+"køb"
+
+#: src/Settings/Sections/PricingSection.php:13
+msgid ""
+"When you use percentage discounts to assign prices for specific users, you "
+"can choose to display either exact prices or show it as the sale price."
+msgstr ""
+"Når du bruger procentrabatter til at tildele priser til bestemte brugere, "
+"kan du vælge enten at vise nøjagtige priser eller vise det som udsalgspris."
+
+#: views/admin/alerts/upgrade-alert.php:22
+msgid ""
+"You are using the free version of plugin. Upgrade to premium version to get "
+"all features."
+msgstr ""
+"Du bruger den gratis version af plugin. Opgrader til premium-version for at "
+"få alle funktioner."
+
+#: src/Settings/Sections/MainSection.php:14
+msgid ""
+"You can set up different scenarios for how the plugin should handle "
+"unauthorized users here."
+msgstr ""
+"Du kan opsætte forskellige scenarier for, hvordan plugin'et skal håndtere "
+"uautoriserede brugere her."
+
+#: src/RoleManagement/RolesTable.php:54
+msgid "You cannot delete standard roles"
+msgstr "Du kan ikke slette standardroller"
+
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+msgid "your account"
+msgstr "din konto"

@@ -1,0 +1,755 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Role and Customer Based Pricing for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-15 23:02+0000\n"
+"PO-Revision-Date: 2022-02-16 09:06+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.8; wp-5.9\n"
+"X-Domain: role-and-customer-based-pricing-for-woocommerce"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:48
+msgid "Account"
+msgstr "Compte"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:22
+msgid "Active"
+msgstr "actif"
+
+#: views/admin/role-management/list.php:20
+msgid "Add new role"
+msgstr "Ajouter un nouveau rôle"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:307
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:308
+msgid "Add Pricing Rule"
+msgstr "Ajouter une règle de tarification"
+
+#: views/admin/role-management/list.php:54
+msgid "Add Role"
+msgstr "Ajouter un rôle"
+
+#: src/Settings/Sections/MainSection.php:48
+msgid "Add to cart label for non logged users"
+msgstr "Étiquette Ajouter au panier pour les utilisateurs non connectés"
+
+#: views/admin/role-management/list.php:44
+msgid "Adopt all the capabilities from the selected role."
+msgstr "Adoptez toutes les capacités du rôle sélectionné."
+
+#. %s: count of capabilities
+#: src/RoleManagement/RolesTable.php:79
+#, php-format
+msgid "and %d more..."
+msgstr "et %d de plus..."
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:56
+msgid "Applied to every product"
+msgstr "Appliqué à chaque produit"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:54
+msgid "Applied to every user"
+msgstr "Appliqué à chaque utilisateur"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:31
+msgid "Apply for categories"
+msgstr "Appliquer pour les catégories"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:53
+msgid "Apply for specific products"
+msgstr "Demander des produits spécifiques"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:132
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:163
+msgid "Available in the premium version."
+msgstr "Disponible dans la version premium."
+
+#: src/RoleManagement/RolesTable.php:29
+msgid "Capabilities"
+msgstr "Capacités"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:35
+msgid "Categories: "
+msgstr "Catégories :"
+
+#: src/Settings/Sections/MainSection.php:49
+msgid ""
+"Change default Add to cart label to something else to be displayed for non-"
+"logged users"
+msgstr ""
+"Changer l'étiquette Ajouter au panier par défaut pour autre chose à afficher "
+"pour les utilisateurs non connectés"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:49
+msgid ""
+"Choose the categories for which this pricing rule will apply. The rule "
+"applies to all products in the category."
+msgstr ""
+"Choisissez les catégories pour lesquelles cette règle de tarification "
+"s'appliquera. La règle s'applique à tous les produits de la catégorie."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:28
+msgid "Choose the products and/or categories to apply the pricing rule"
+msgstr ""
+"Choisissez les produits et/ou catégories pour appliquer la règle de "
+"tarification"
+
+#: views/admin/product-page/role-specific-pricing/index.php:26
+msgid ""
+"Choose the role to create the new pricing rules that will apply to all users "
+"with that role."
+msgstr ""
+"Choisissez le rôle pour créer les nouvelles règles de tarification qui "
+"s'appliqueront à tous les utilisateurs avec ce rôle."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:76
+msgid ""
+"Choose the user role and/or customers' accounts to apply the pricing rule"
+msgstr ""
+"Choisissez le rôle d'utilisateur et/ou les comptes des clients pour "
+"appliquer la règle de tarification"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:96
+msgid ""
+"Choose to what user roles this rule will be relevant. Applies to all users "
+"with those roles."
+msgstr ""
+"Choisissez à quels rôles d'utilisateur cette règle sera pertinente. "
+"S'applique à tous les utilisateurs avec ces rôles."
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:52
+msgid "Contact Us"
+msgstr "Nous contacter"
+
+#: views/admin/alerts/premium-thanking-alert.php:23
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: views/admin/alerts/upgrade-alert.php:33
+msgid "Contact Us!"
+msgstr "Nous contacter!"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:277
+msgid "Create a pricing rule"
+msgstr "Créer une règle de tarification"
+
+#: views/admin/product-page/role-specific-pricing/index.php:40
+msgid "Customer based pricing"
+msgstr "Tarification basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:173
+#: src/Services/Import/WooCommerce.php:207
+msgid "Customer-based discount"
+msgstr "Remise basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:178
+#: src/Services/Import/WooCommerce.php:212
+msgid "Customer-based maximum quantity"
+msgstr "Quantité maximale basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:177
+#: src/Services/Import/WooCommerce.php:211
+msgid "Customer-based minimum quantity"
+msgstr "Quantité minimale basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:172
+#: src/Services/Import/WooCommerce.php:206
+msgid "Customer-based pricing type"
+msgstr "Type de tarification basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:179
+#: src/Services/Import/WooCommerce.php:213
+msgid "Customer-based quantity step"
+msgstr "Étape de quantité basée sur le client"
+
+#: src/Services/Export/WooCommerce.php:174
+#: src/Services/Import/WooCommerce.php:208
+msgid "Customer-based regular price"
+msgstr "Prix régulier basé sur le client"
+
+#: src/Services/Export/WooCommerce.php:175
+#: src/Services/Import/WooCommerce.php:209
+msgid "Customer-based sale price"
+msgstr "Prix de vente basé sur le client"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:11
+msgid "Customers"
+msgstr "Clients"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:43
+msgid "Customers: "
+msgstr "Clients:"
+
+#: src/RoleManagement/RolesTable.php:52
+msgid "Delete"
+msgstr "Supprimer"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:28
+msgid "Discount"
+msgstr "Remise"
+
+#: src/Services/Import/WPAllImport.php:179
+msgid "Discount amount"
+msgstr "Montant de la remise"
+
+#: src/Settings/Sections/PricingSection.php:23
+msgid "Display as"
+msgstr "Afficher comme"
+
+#: views/admin/role-management/list.php:31
+msgid "Display name"
+msgstr "Afficher un nom"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:309
+msgid "Edit Pricing Rule"
+msgstr "Modifier la règle de tarification"
+
+#: src/Settings/Sections/MainSection.php:32
+msgid "Error message when non-logged users add to cart"
+msgstr ""
+"Message d'erreur lorsque des utilisateurs non connectés ajoutent au panier"
+
+#: src/Settings/Sections/PricingSection.php:29
+msgid "Exact set price"
+msgstr "Prix fixe"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:312
+msgid "Find Pricing Rule"
+msgstr "Rechercher une règle de tarification"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:61
+msgid "Flat prices"
+msgstr "Prix forfaitaires"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:56
+msgid "Go Premium"
+msgstr "Passer en Premium"
+
+#: views/admin/alerts/activation-alert.php:15
+msgid "here"
+msgstr "ici"
+
+#: src/Settings/Sections/MainSection.php:40
+msgid "Hide prices for non-logged users"
+msgstr "Masquer les prix pour les utilisateurs non connectés"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://meow-crew.com"
+msgstr "https://meow-crew.com"
+
+#: views/admin/product-page/role-specific-pricing/index.php:41
+msgid ""
+"If you need to make pricing rules only for specific customers (not whole "
+"user role), choose the customer name here"
+msgstr ""
+"Si vous devez établir des règles de tarification uniquement pour des clients "
+"spécifiques (pas pour l'ensemble du rôle d'utilisateur), choisissez le nom "
+"du client ici"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:100
+msgid "Include specific customers"
+msgstr "Inclure des clients spécifiques"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:79
+msgid "Include user roles"
+msgstr "Inclure les rôles d'utilisateur"
+
+#: views/admin/role-management/list.php:35
+msgid "Inherit role"
+msgstr "Hériter du rôle"
+
+#: src/RoleManagement/Actions/NewRoleAction.php:39
+msgid "Invalid inherited role."
+msgstr "Rôle hérité non valide."
+
+#: src/RoleManagement/Actions/RoleManagementPageAction.php:57
+msgid "Invalid Nonce"
+msgstr "Nom non valide"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:30
+msgid "Invalid role name"
+msgstr "Nom de rôle invalide"
+
+#: src/Settings/Sections/MainSection.php:52
+msgid "Leave it empty to keep as it is"
+msgstr "Laissez-le vide pour le garder tel quel"
+
+#: src/Services/Import/WPAllImport.php:222
+msgid "Maximum order quantity"
+msgstr "Quantité maximale de commande"
+
+#. %s: maximum quantity
+#: src/Services/QuantityManagementService.php:135
+#, php-format
+msgid "Maximum order quantity for the product is %s"
+msgstr "La quantité maximale de commande pour le produit est %s"
+
+#. %s: maximum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:22
+#, php-format
+msgid "Maximum: %s"
+msgstr "Maximale : %s"
+
+#. Author of the plugin
+msgid "Meow Crew"
+msgstr "miaou équipage"
+
+#: src/Services/Import/WPAllImport.php:211
+msgid "Minimum order quantity"
+msgstr "Quantité minimum d'achat"
+
+#. %s: minimum quantity
+#: src/Services/QuantityManagementService.php:124
+#, php-format
+msgid "Minimum order quantity for the product is %s"
+msgstr "La quantité minimum de commande pour le produit est %s"
+
+#. %s: minimum amount
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:20
+#, php-format
+msgid "Minimum: %s"
+msgstr "Minimum : %s"
+
+#: views/admin/alerts/premium-thanking-alert.php:21
+msgid "My Account"
+msgstr "Mon compte"
+
+#: src/RoleManagement/RolesTable.php:28 views/admin/role-management/list.php:27
+msgid "Name"
+msgstr "Nom"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:310
+msgid "New Pricing Rule"
+msgstr "Nouvelle règle de tarification"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:314
+msgid "No pricing rule in trash"
+msgstr "Aucune règle de tarification dans la corbeille"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:313
+msgid "No pricing rules ware found"
+msgstr "Aucun article de règles de tarification trouvé"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:13
+msgid "Not set"
+msgstr "Pas encore défini"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:83
+msgid ""
+"Note that prices indicated below will be applied to the whole range of "
+"products you specified in the products/categories sections. Be careful to "
+"not mess up the pricing."
+msgstr ""
+"Notez que les prix indiqués ci-dessous seront appliqués à toute la gamme de "
+"produits que vous avez spécifiée dans les sections produits/catégories. "
+"Attention à ne pas bousiller les prix."
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:42
+msgid "Off"
+msgstr "Désactivé"
+
+#: src/Settings/CustomOptions/SwitchCheckboxOption.php:38
+msgid "On"
+msgstr "Au"
+
+#: src/Settings/Settings.php:215 src/Settings/Sections/MainSection.php:51
+msgid "Only for registered clients"
+msgstr "Uniquement pour les clients enregistrés"
+
+#. %s: quantity step
+#: src/Services/QuantityManagementService.php:146
+#, php-format
+msgid "Order quantity must be multiple for %s"
+msgstr "La quantité commandée doit être multiple pour %s"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:72
+msgid "Percentage discount"
+msgstr "Remise en pourcentage"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:72
+msgid "Pick up products for which you want to apply the pricing rule."
+msgstr ""
+"Sélectionnez les produits pour lesquels vous souhaitez appliquer la règle de "
+"tarification."
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:118
+msgid "Pick up separate user accounts, which will be affected by this rule. "
+msgstr ""
+"Choisissez des comptes d'utilisateurs distincts, qui seront affectés par "
+"cette règle."
+
+#. %s: login page url
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+#, php-format
+msgid "Please enter %s to make a purchase"
+msgstr "Veuillez saisir %s pour effectuer un achat"
+
+#: src/Settings/Sections/MainSection.php:24
+msgid "Prevent purchase for non-logged users"
+msgstr "Empêcher l'achat pour les utilisateurs non connectés"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:164
+#: src/Settings/Sections/PricingSection.php:9
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:9
+msgid "Pricing"
+msgstr "Tarification"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:305
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:306
+msgid "Pricing rule"
+msgstr "Règle de tarification"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:316
+msgid "Pricing rules"
+msgstr "Règles de tarification"
+
+#: src/Services/Import/WPAllImport.php:170
+msgid "Pricing type"
+msgstr "Type de tarification"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:158
+msgid "Product quantity control"
+msgstr "Contrôle de la quantité de produit"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:10
+msgid "Products"
+msgstr "Des produits"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php:45
+msgid "Products: "
+msgstr "Des produits:"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:8
+msgid "Quantity rules"
+msgstr "Règles de quantité"
+
+#: src/Services/Import/WPAllImport.php:233
+msgid "Quantity step"
+msgstr "Pas de quantité"
+
+#. %s: quantity step
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php:24
+#, php-format
+msgid "Quantity step: %s"
+msgstr "Pas de quantité : %s"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:31
+msgid "Reactivate"
+msgstr "Réactiver"
+
+#: src/Services/Import/WPAllImport.php:189
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:19
+msgid "Regular price"
+msgstr "Prix habituel"
+
+#: src/Settings/Sections/MainSection.php:10
+msgid "Role and Customer Based Pricing"
+msgstr "Tarification basée sur le rôle et le client"
+
+#: src/Services/Import/WPAllImport.php:31
+msgid "Role and Customer based pricing"
+msgstr "Tarification basée sur le rôle et le client"
+
+#. Name of the plugin
+msgid "Role and Customer Based Pricing for WooCommerce"
+msgstr "WooCommerce Role Based Pricing by Meow Crew"
+
+#. %s = required plugin
+#: src/RoleAndCustomerBasedPricingPlugin.php:116
+#, php-format
+msgid ""
+"Role and Customer Based Pricing for WooCommerce requires %s plugin to be "
+"active!"
+msgstr ""
+"La WooCommerce Role Based Pricing by Meow Crew nécessite que le plug-in %s "
+"soit actif !"
+
+#: views/admin/product-page/role-specific-pricing/index.php:25
+msgid "Role based pricing"
+msgstr "Tarification basée sur les rôles"
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:14
+msgid "Role deleted successfully."
+msgstr "Rôle supprimé avec succès."
+
+#: src/RoleManagement/Actions/NewRoleAction.php:33
+msgid "Role name is required."
+msgstr "Le nom du rôle est requis."
+
+#: src/Services/Export/WooCommerce.php:164
+#: src/Services/Import/WooCommerce.php:198
+msgid "Role-based discount"
+msgstr "Remise basée sur les rôles"
+
+#: src/Services/Export/WooCommerce.php:169
+#: src/Services/Import/WooCommerce.php:203
+msgid "Role-based maximum quantity"
+msgstr "Quantité maximale basée sur les rôles"
+
+#: src/Services/Export/WooCommerce.php:168
+#: src/Services/Import/WooCommerce.php:202
+msgid "Role-based minimum quantity"
+msgstr "Quantité minimale basée sur les rôles"
+
+#: src/Services/Export/WooCommerce.php:163
+#: src/Services/Import/WooCommerce.php:197
+msgid "Role-based pricing type"
+msgstr "Type de tarification basée sur les rôles"
+
+#: src/Services/Export/WooCommerce.php:170
+#: src/Services/Import/WooCommerce.php:204
+msgid "Role-based quantity step"
+msgstr "Étape de quantité basée sur le rôle"
+
+#: src/Services/Export/WooCommerce.php:165
+#: src/Services/Import/WooCommerce.php:199
+msgid "Role-based regular price"
+msgstr "Prix régulier basé sur les rôles"
+
+#: src/Services/Export/WooCommerce.php:166
+#: src/Services/Import/WooCommerce.php:200
+msgid "Role-based sale price"
+msgstr "Prix de vente basé sur les rôles"
+
+#: src/Settings/Settings.php:160
+msgid "Role\\Customer Based Pricing"
+msgstr "Rôle\\Tarification basée sur le client"
+
+#: src/Admin/ProductPage/RoleSpecificPricingTab.php:21
+msgid "Role\\User pricing"
+msgstr "Tarification Rôle\\Utilisateur"
+
+#: src/RoleManagement/RoleManagementPage.php:36
+#: src/RoleManagement/RoleManagementPage.php:37
+#: views/admin/role-management/list.php:14
+msgid "Roles Management"
+msgstr "Gestion des rôles"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php:31
+msgid "Roles: "
+msgstr "Les rôles:"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:159
+msgid "Rules"
+msgstr "Des règles"
+
+#: src/Services/Import/WPAllImport.php:200
+#: src/Settings/Sections/PricingSection.php:30
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php:23
+msgid "Sale price"
+msgstr "Prix de vente"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:35
+msgid "Search for a category&hellip;"
+msgstr "Rechercher une catégorie…"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:57
+msgid "Search for a product&hellip;"
+msgstr "Rechercher un produit…"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:83
+msgid "Select for a customer role&hellip;"
+msgstr "Sélectionnez pour un rôle client…"
+
+#: views/admin/global-rules/role-specific-pricing/rules.php:106
+#: views/admin/product-page/role-specific-pricing/identifiers/customer-specific.php:13
+msgid "Select for a customer&hellip;"
+msgstr "Sélectionnez pour un client…"
+
+#: src/RoleAndCustomerBasedPricingPlugin.php:44
+msgid "Settings"
+msgstr "Réglages"
+
+#: src/Settings/Sections/MainSection.php:43
+msgid "Show all prices in the store only for logged users"
+msgstr ""
+"Afficher tous les prix dans le magasin uniquement pour les utilisateurs "
+"connectés"
+
+#: src/Services/Import/WPAllImport.php:240
+msgid ""
+"Specify by how many product quantity will increase or decrease when a "
+"customer adds the product to the cart"
+msgstr ""
+"Spécifiez de combien la quantité de produit augmentera ou diminuera "
+"lorsqu'un client ajoutera le produit au panier"
+
+#: src/Services/Import/WPAllImport.php:196
+msgid ""
+"Specify exact regular price expressed in numerical value (without currency "
+"symbol)"
+msgstr ""
+"Spécifiez le prix régulier exact exprimé en valeur numérique (sans symbole "
+"monétaire)"
+
+#: src/Services/Import/WPAllImport.php:207
+msgid ""
+"Specify exact sale price (crossed out price) expressed in numerical value "
+"(without currency symbol)"
+msgstr ""
+"Spécifiez le prix de vente exact (prix barré) exprimé en valeur numérique "
+"(sans symbole monétaire)"
+
+#: src/Services/Import/WPAllImport.php:184
+msgid ""
+"Specify number of discount ('50', not '50%') if using percentage pricing "
+"type."
+msgstr ""
+"Spécifiez le nombre de remises (\"50\", et non \"50 %\") si vous utilisez le "
+"type de tarification en pourcentage."
+
+#: src/Services/Import/WPAllImport.php:229
+msgid ""
+"Specify the maximum number of products available for purchase by this role "
+"in one order."
+msgstr ""
+"Spécifiez le nombre maximum de produits disponibles à l'achat par ce rôle "
+"dans une commande."
+
+#: src/Services/Import/WPAllImport.php:218
+msgid ""
+"Specify the minimal amount of products that one user can purchase for this "
+"role."
+msgstr ""
+"Spécifiez la quantité minimale de produits qu'un utilisateur peut acheter "
+"pour ce rôle."
+
+#: src/RoleManagement/Actions/DeleteRoleAction.php:17
+msgid "Standard roles cannot be deleted or modified."
+msgstr "Les rôles standard ne peuvent pas être supprimés ou modifiés."
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:9
+msgid "Status"
+msgstr "Statut"
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:30
+msgid "Suspend"
+msgstr "Suspendre"
+
+#: src/GlobalRoleSpecificPricing/CPT/Columns/Status.php:16
+msgid "Suspended"
+msgstr "Suspendu"
+
+#: views/admin/alerts/activation-alert.php:14
+msgid ""
+"Thanks for installing Tiered Price Table for WooCommerce! You can customize "
+"it "
+msgstr ""
+"Merci d'avoir installé le WooCommerce Role Based Pricing by Meow Crew! Vous "
+"pouvez le personnaliser"
+
+#: views/admin/alerts/premium-thanking-alert.php:14
+msgid "Thanks! You are using premium version of the plugin!"
+msgstr "Merci! Vous utilisez la version premium du plugin !"
+
+#: src/Entity/PricingRule.php:307
+msgid "The discount is not set."
+msgstr "La remise n'est pas définie."
+
+#: src/Entity/PricingRule.php:303
+msgid "The pricing fields must be filled."
+msgstr "Les champs de prix doivent être remplis."
+
+#: src/RoleManagement/Actions/NewRoleAction.php:25
+msgid "The role has been added successfully."
+msgstr "Le rôle a été ajouté avec succès."
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php:50
+msgid "The rule reactivated successfully."
+msgstr "La règle a été réactivée avec succès."
+
+#: src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php:48
+msgid "The rule suspended successfully."
+msgstr "La règle a été suspendue avec succès."
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:271
+msgid ""
+"There are no pricing rules yet. To create pricing dependencies on user "
+"roles/customers click on the button below."
+msgstr ""
+"Il n'y a pas encore de règles de tarification. Pour créer des dépendances de "
+"tarification sur les rôles d'utilisateur/clients, cliquez sur le bouton ci-"
+"dessous."
+
+#: src/Settings/CustomOptions/PremiumSelectOption.php:106
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:134
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:165
+msgid "Upgrade now"
+msgstr "Mettre à jour maintenant"
+
+#: views/admin/alerts/upgrade-alert.php:31
+msgid "Upgrade to Premium!"
+msgstr "Passer à la version premium!"
+
+#: src/Services/Import/WPAllImport.php:175
+msgid "Use 'flat' or 'percentage' to specify the pricing type for the role"
+msgstr ""
+"Utilisez 'fixe' ou 'pourcentage' pour spécifier le type de tarification pour "
+"le rôle"
+
+#. Description of the plugin
+msgid ""
+"Use this plugin to create pricing rules based on user roles or individual "
+"pricing for various customers."
+msgstr ""
+"Utilisez ce plugin pour créer des règles de tarification basées sur les "
+"rôles des utilisateurs ou des tarifs individuels pour différents clients."
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:32
+msgid "user role"
+msgstr "rôle d'utilisateur"
+
+#: views/admin/product-page/role-specific-pricing/single-rule-form.php:35
+msgid "users in this rule"
+msgstr "utilisateurs dans cette règle"
+
+#: src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php:311
+msgid "View Pricing Rule"
+msgstr "Afficher la règle de tarification"
+
+#: src/Settings/Sections/MainSection.php:27
+msgid "When the users isn't logged in, they'll not be able to make a purchase"
+msgstr ""
+"Lorsque les utilisateurs ne sont pas connectés, ils ne peuvent pas effectuer "
+"d'achat"
+
+#: src/Settings/Sections/PricingSection.php:13
+msgid ""
+"When you use percentage discounts to assign prices for specific users, you "
+"can choose to display either exact prices or show it as the sale price."
+msgstr ""
+"Lorsque vous utilisez des remises en pourcentage pour attribuer des prix à "
+"des utilisateurs spécifiques, vous pouvez choisir d'afficher les prix exacts "
+"ou de les afficher comme prix de vente."
+
+#: views/admin/alerts/upgrade-alert.php:22
+msgid ""
+"You are using the free version of plugin. Upgrade to premium version to get "
+"all features."
+msgstr ""
+"Vous utilisez la version gratuite du plugin. Passez à la version premium "
+"pour obtenir toutes les fonctionnalités."
+
+#: src/Settings/Sections/MainSection.php:14
+msgid ""
+"You can set up different scenarios for how the plugin should handle "
+"unauthorized users here."
+msgstr ""
+"Vous pouvez configurer différents scénarios sur la façon dont le plugin doit "
+"gérer les utilisateurs non autorisés ici."
+
+#: src/RoleManagement/RolesTable.php:54
+msgid "You cannot delete standard roles"
+msgstr "Vous ne pouvez pas supprimer les rôles standard"
+
+#: src/Settings/Settings.php:211 src/Settings/Sections/MainSection.php:36
+msgid "your account"
+msgstr "Votre compte"
