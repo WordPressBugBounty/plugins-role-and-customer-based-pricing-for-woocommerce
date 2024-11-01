@@ -12,6 +12,7 @@ use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\RoleSpeci
 use MeowCrew\RoleAndCustomerBasedPricing\Integrations\Integrations;
 use MeowCrew\RoleAndCustomerBasedPricing\RoleManagement\RoleManagement;
 use MeowCrew\RoleAndCustomerBasedPricing\Services\Import\WPAllImport;
+use MeowCrew\RoleAndCustomerBasedPricing\Services\RoleBasedTaxService;
 use MeowCrew\RoleAndCustomerBasedPricing\Services\Select2LookupService;
 use MeowCrew\RoleAndCustomerBasedPricing\Services\NonLoggedUsersService;
 use MeowCrew\RoleAndCustomerBasedPricing\Services\ProductPricingService;
@@ -26,7 +27,7 @@ use MeowCrew\RoleAndCustomerBasedPricing\Services\Export\WooCommerce as WooComme
  */
 class RoleAndCustomerBasedPricingPlugin {
     use ServiceContainerTrait;
-    const VERSION = '1.5.5';
+    const VERSION = '1.6.0';
 
     /**
      * RoleAndCustomerBasedPricingPlugin constructor.

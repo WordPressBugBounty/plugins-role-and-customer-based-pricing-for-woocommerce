@@ -2,9 +2,9 @@
 Contributors: meowcrew, freemius
 Tags: Role based pricing, prices by user role, wholesale, woocommerce, dynamic price
 Requires at least: 4.2
-Tested up to: 6.6.0
+Tested up to: 6.7.0
 Requires PHP: 5.6
-Stable tag: 1.5.5
+Stable tag: 1.6.0
 License: GNU General Public License v2
 License URI: https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
 Create individual pricing for customers based on their role or account. Works with all types of products along with Import-Export tools
@@ -39,6 +39,8 @@ Premium features:
 *   **Set quantity step** for each product based on user role
 *   Import/export role and customer-based pricing via **WooCommerce import/export tool**
 *   Import role-based prices via **WP All Import**
+*   Use sale or regular price as **based price**
+*   **Custom tax settings for each role** separate from store defaults: disable taxes or hide them on shop and checkout pages
 
 With role-based pricing in WooCommerce, you can create custom prices by user role. This means that users with a certain role will see different prices for the same product than users with another role. For example, you might offer a discount to wholesale customers who buy in bulk, or charge a premium for products sold to non-registered users.
 The WooCommerce Role Based Pricing by Meow Crew plugin contains everything you need to run a successful wholesale or membership business, which often requires special offers for various customer groups. It stands out favorably among other plugins by offering every possible feature you need. So don't hesitate, and give it a try.
@@ -65,15 +67,21 @@ You can find instructions on how to mass import wholesale and role-based prices 
 10. Hide prices for non-logged users
 11. Import-Export via WooCommerce regular tool
 12. Import Pricing Rules for various User Roles via WP All Import plugin
+13. Taxes settings based on user role
 
 == Changelog ==
+
+2024-11-01 - version 1.6.0
+* New: Tax settings based on user role
+* Fix: Freemius version update
+* Updated: WooCommerce 9.4 version compatibility
 
 2024-09-05 - version 1.5.5
 * New: Hook to add compatibility with custom post types
 * New: Select regular or sale price to calculate discounts
 * Fix: 'Unsupported operand types' warning
 
-2024-06-18 – version 1.5.4
+2024-06-18 â€“ version 1.5.4
 * Updated: Smart Coupons compatibility
 * Updated: Woo and WP version compatibility
 * Fix: Updating role-based related values on Woo Import

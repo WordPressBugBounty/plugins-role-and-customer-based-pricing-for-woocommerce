@@ -5,12 +5,14 @@ namespace MeowCrew\RoleAndCustomerBasedPricing\Settings;
 use MeowCrew\RoleAndCustomerBasedPricing\Core\ServiceContainerTrait;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\CustomOptions\PremiumImportOption;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\CustomOptions\PremiumSelectOption;
+use MeowCrew\RoleAndCustomerBasedPricing\Settings\CustomOptions\RoleBasedTaxesOption;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\CustomOptions\TemplateOption;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\CustomOptions\SwitchCheckboxOption;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\Sections\AbstractSection;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\Sections\ImportExportSection;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\Sections\MainSection;
 use MeowCrew\RoleAndCustomerBasedPricing\Settings\Sections\PricingSection;
+use MeowCrew\RoleAndCustomerBasedPricing\Settings\Sections\RoleBasedTaxesSection;
 /**
  * Class Settings
  *
@@ -50,12 +52,14 @@ class Settings {
         $this->getContainer()->add( 'settings.TemplateOption', new TemplateOption() );
         $this->getContainer()->add( 'settings.PremiumSelectOption', new PremiumSelectOption() );
         $this->getContainer()->add( 'settings.PremiumImportOption', new PremiumImportOption() );
+        $this->getContainer()->add( 'settings.roleBasedTaxesOption', new RoleBasedTaxesOption() );
     }
 
     public function initSections() {
         $this->sections = array(
-            'main'    => new MainSection(),
-            'pricing' => new PricingSection(),
+            'main'                    => new MainSection(),
+            'pricing'                 => new PricingSection(),
+            'role_based_tax_settings' => new RoleBasedTaxesSection(),
         );
         $this->sections['import_export'] = new ImportExportSection();
     }
@@ -80,7 +84,7 @@ class Settings {
                 'type'  => 'title',
             );
             foreach ( $section->getSettings() as $key => $value ) {
-                $settings[$key] = $value;
+                $settings[] = $value;
             }
             $settings[$section->getName() . '__section_end'] = array(
                 'id'   => self::SETTINGS_PREFIX . $section->getName() . '__section_end',
@@ -112,7 +116,7 @@ class Settings {
     /**
      * Add own settings tab
      *
-     * @param array $settings_tabs
+     * @param  array  $settings_tabs
      *
      * @return mixed
      */
@@ -131,8 +135,8 @@ class Settings {
     /**
      * Get setting by name
      *
-     * @param string $option_name
-     * @param mixed $default
+     * @param  string  $option_name
+     * @param  mixed  $default
      *
      * @return mixed
      */
