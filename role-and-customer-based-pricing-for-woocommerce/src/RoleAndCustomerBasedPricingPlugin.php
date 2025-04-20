@@ -27,7 +27,7 @@ use MeowCrew\RoleAndCustomerBasedPricing\Services\Export\WooCommerce as WooComme
  */
 class RoleAndCustomerBasedPricingPlugin {
     use ServiceContainerTrait;
-    const VERSION = '1.6.0';
+    const VERSION = '1.6.1';
 
     /**
      * RoleAndCustomerBasedPricingPlugin constructor.
