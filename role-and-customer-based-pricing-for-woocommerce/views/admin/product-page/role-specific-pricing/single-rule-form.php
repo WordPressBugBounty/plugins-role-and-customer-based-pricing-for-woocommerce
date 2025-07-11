@@ -49,7 +49,7 @@ switch ( $type ) {
 
             <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
 
-                <label><?php esc_html_e( 'Pricing type', 'role-specific-pricing' ); ?> </label>
+                <label><?php esc_html_e( 'Pricing type', 'role-and-customer-based-pricing-for-woocommerce' ); ?> </label>
 
                 <input type="radio" value="flat" name="<?php echo esc_html( $fieldName ); ?>"
                        class="rcbp-pricing-type-input"
@@ -87,10 +87,10 @@ switch ( $type ) {
 			<?php $fieldName = "_rcbp_{$type}_regular_price{$loop}[{$identifier}]"; ?>
 
             <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
-                <label for="<?php echo esc_attr( $fieldName ); ?>"><?php echo esc_attr( __( 'Regular price', 'role-specific-pricing' ) . ' (' . get_woocommerce_currency_symbol() . ')' ); ?> </label>
+                <label for="<?php echo esc_attr( $fieldName ); ?>"><?php echo esc_attr( __( 'Regular price', 'role-and-customer-based-pricing-for-woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ); ?> </label>
 				<?php
 				/* translators: %s: Customer role or name */
-				$placeholder = sprintf( __( 'Specify the regular price for %s', 'role-specific-pricing' ), $labelRuleAppliedFor );
+				$placeholder = sprintf( __( 'Specify the regular price for %s', 'role-and-customer-based-pricing-for-woocommerce' ), $labelRuleAppliedFor );
 				?>
                 <input type="text"
                        value="<?php echo esc_attr( wc_format_localized_price( $pricing_rule->getRegularPrice() ) ); ?>"
@@ -99,18 +99,18 @@ switch ( $type ) {
                        name="<?php echo esc_attr( $fieldName ); ?>"
                        id="<?php echo esc_attr( $fieldName ); ?>">
 
-				<?php echo wc_help_tip( esc_attr__( 'If you don\'t want to change standard product pricing - leave field empty.', 'role-specific-pricing' ) ); ?>
+				<?php echo wp_kses_post( wc_help_tip( esc_attr__( 'If you don\'t want to change standard product pricing - leave field empty.', 'role-and-customer-based-pricing-for-woocommerce' )) ); ?>
             </p>
 
 			<?php $fieldName = "_rcbp_{$type}_sale_price{$loop}[{$identifier}]"; ?>
 
             <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
                 <label for="<?php echo esc_attr( $fieldName ); ?>">
-					<?php echo esc_attr( __( 'Sale price', 'role-specific-pricing' ) . ' (' . get_woocommerce_currency_symbol() . ')' ); ?>
+					<?php echo esc_attr( __( 'Sale price', 'role-and-customer-based-pricing-for-woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')' ); ?>
                 </label>
 				<?php
 				/* translators: %s: Customer role or name */
-				$placeholder = sprintf( __( 'Specify the sale price for %s', 'role-specific-pricing' ), $labelRuleAppliedFor );
+				$placeholder = sprintf( __( 'Specify the sale price for %s', 'role-and-customer-based-pricing-for-woocommerce' ), $labelRuleAppliedFor );
 				?>
                 <input type="text"
                        value="<?php echo esc_attr( wc_format_localized_price( $pricing_rule->getSalePrice() ) ); ?>"
@@ -119,7 +119,7 @@ switch ( $type ) {
                        name="<?php echo esc_attr( $fieldName ); ?>"
                        id="<?php echo esc_attr( $fieldName ); ?>">
 
-				<?php echo wc_help_tip( esc_attr__( 'If you don\'t want to change standard product pricing - leave field empty.', 'role-specific-pricing' ) ); ?>
+				<?php echo wp_kses_post( wc_help_tip( esc_attr__( 'If you don\'t want to change standard product pricing - leave field empty.', 'role-and-customer-based-pricing-for-woocommerce' ) ) ); ?>
             </p>
         </div>
 
@@ -141,7 +141,7 @@ switch ( $type ) {
 
                 <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
                     <label for="<?php echo esc_attr( $fieldName ); ?>">
-						<?php echo esc_attr( __( 'Discount (%)', 'role-specific-pricing' ) ); ?>
+						<?php echo esc_attr( __( 'Discount (%)', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
                     </label>
 
                     <input type="number" step="any" value="<?php echo esc_attr( $pricing_rule->getDiscount() ); ?>"
@@ -173,11 +173,11 @@ switch ( $type ) {
 
         <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
             <label for="<?php echo esc_attr( $fieldName ); ?>">
-				<?php echo esc_attr( __( 'Minimum quantity', 'role-specific-pricing' ) ); ?>
+				<?php echo esc_attr( __( 'Minimum quantity', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
             </label>
 			<?php
 			// translators: %s = role name
-			echo wc_help_tip( sprintf( __( 'Specify the minimal amount of products that %s can purchase.', 'role-specific-pricing' ), '<b>' . $labelRuleAppliedFor . '</b>' ) );
+			echo wp_kses_post( wc_help_tip( sprintf( __( 'Specify the minimal amount of products that %s can purchase.', 'role-and-customer-based-pricing-for-woocommerce' ), '<b>' . $labelRuleAppliedFor . '</b>' ) ) );
 			?>
             <input type="number"
                    step="1"
@@ -190,11 +190,11 @@ switch ( $type ) {
 
         <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
             <label for="<?php echo esc_attr( $fieldName ); ?>">
-				<?php echo esc_attr( __( 'Maximum quantity', 'role-specific-pricing' ) ); ?>
+				<?php echo esc_attr( __( 'Maximum quantity', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
             </label>
 			<?php
 			// translators: %s = role name
-			echo wc_help_tip( sprintf( __( 'Specify the maximum number of products available for purchase by %s in one order.', 'role-specific-pricing' ), '<b>' . $labelRuleAppliedFor . '</b>' ) );
+			echo wp_kses_post(  wc_help_tip( sprintf( __( 'Specify the maximum number of products available for purchase by %s in one order.', 'role-and-customer-based-pricing-for-woocommerce' ), '<b>' . $labelRuleAppliedFor . '</b>' ) ) );
 			?>
             <input type="number"
                    step="1"
@@ -207,11 +207,11 @@ switch ( $type ) {
 
         <p class="form-field <?php echo esc_attr( $fieldName ); ?>_field">
             <label for="<?php echo esc_attr( $fieldName ); ?>">
-				<?php echo esc_attr( __( 'Quantity step', 'role-specific-pricing' ) ); ?>
+				<?php echo esc_attr( __( 'Quantity step', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
             </label>
 			<?php
 			// translators: %s = role name
-			echo wc_help_tip( sprintf( __( 'Specify by how many products quantity will increase or decrease when a customer adds the product to the cart for purchase by %s. Leave blank if products can be added one by one.', 'role-specific-pricing' ), '<b>' . $labelRuleAppliedFor . '</b>' ) );
+			echo wp_kses_post(  wc_help_tip( sprintf( __( 'Specify by how many products quantity will increase or decrease when a customer adds the product to the cart for purchase by %s. Leave blank if products can be added one by one.', 'role-and-customer-based-pricing-for-woocommerce' ), '<b>' . $labelRuleAppliedFor . '</b>' ) ) );
 			?>
             <input type="number"
                    step="1"

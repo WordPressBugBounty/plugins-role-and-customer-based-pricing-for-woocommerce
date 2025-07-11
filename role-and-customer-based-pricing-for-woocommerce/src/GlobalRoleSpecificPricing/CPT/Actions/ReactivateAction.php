@@ -60,7 +60,8 @@ class ReactivateAction {
 			wp_die( 'You\'re not allowed to run this action' );
 		}
 
-		return wp_safe_redirect( wp_get_referer() );
+		wp_safe_redirect( wp_get_referer() );
+		exit;
 	}
 
 	public function getRunLink( $id ) {

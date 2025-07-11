@@ -1,0 +1,22 @@
+{
+  "name": "meow-crew/role-and-customer-based-pricing-for-woocommerce",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Meow Crew"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MeowCrew\\RoleAndCustomerBasedPricing\\": "src"
+    }
+  },
+  "require-dev": {
+    "woocommerce/woocommerce-sniffs": ">0.0.9"
+  },
+  "scripts": {
+    "build": "zip -r role-and-customer-based-pricing-for-woocommerce.zip ./ -x \"*.DS_Store\" -x \"*.git*\" -x \"phpcs.xml\" -x \"composer.lock\" -x \"package.json\" -x \"package-lock.json\" && unzip role-and-customer-based-pricing-for-woocommerce.zip -d role-and-customer-based-pricing-for-woocommerce && rm role-and-customer-based-pricing-for-woocommerce.zip && zip -r role-and-customer-based-pricing-for-woocommerce.zip role-and-customer-based-pricing-for-woocommerce && rm -rf ./role-and-customer-based-pricing-for-woocommerce",
+    "check": "./vendor/bin/phpcs --standard=phpcs.xml -s --warning-severity=0 --ignore-annotations --extensions=php,html",
+    "fix": "./vendor/bin/phpcbf --standard=phpcs.xml --warning-severity=0 --ignore-annotations --extensions=php,html"
+  }
+}

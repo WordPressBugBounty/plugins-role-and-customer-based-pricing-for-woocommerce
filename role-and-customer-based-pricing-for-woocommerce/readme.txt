@@ -1,17 +1,17 @@
-=== WooCommerce Role Based Pricing by Meow Crew ===
+=== Role Based Pricing for Woo by Meow Crew ===
 Contributors: meowcrew, freemius
 Tags: Role based pricing, prices by user role, wholesale, woocommerce, dynamic price
-Requires at least: 4.2
-Tested up to: 6.8.0
+Requires at least: 5.0
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.6.1
+Stable tag: 1.6.3
 License: GNU General Public License v2
 License URI: https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
 Create individual pricing for customers based on their role or account. Works with all types of products along with Import-Export tools
 
 == Description ==
-With WooCommerce Role Based Pricing by Meow Crew, you can create new roles in your WooCommerce store, set personalized pricing for users who have these roles, or set custom pricing for individual users. You can also set purchase rules for each product separately, including minimum/maximum quantity and quantity step. Additionally, you can prevent purchases by non-logged in users and hide prices from them.
-As you can see, WooCommerce Role Based Pricing by Meow Crew is the most complete solution that includes everything you need - from a role design tool and various ways to assign pricing for users, to quantity rules and import-export features. You can manage role-based or customer-based prices using the default WooCommerce Import/Export tool, and it is also integrated with WP All Import.
+With Role Based Pricing for Woo by Meow Crew, you can create new roles in your WooCommerce store, set personalized pricing for users who have these roles, or set custom pricing for individual users. You can also set purchase rules for each product separately, including minimum/maximum quantity and quantity step. Additionally, you can prevent purchases by non-logged in users and hide prices from them.
+As you can see, Role Based Pricing for Woo by Meow Crew is the most complete solution that includes everything you need - from a role design tool and various ways to assign pricing for users, to quantity rules and import-export features. You can manage role-based or customer-based prices using the default WooCommerce Import/Export tool, and it is also integrated with WP All Import.
 
 To find out more about the plugin, read the latest Role-based pricing plugins comparison here - **[9 Best Role-based Pricing and Wholesale plugins for WooCommerce [2022 comparison]](https://meow-crew.com/9-best-role-based-pricing-and-wholesale-plugins-for-woocommerce-2022-comparison)**
 
@@ -43,7 +43,7 @@ Premium features:
 *   **Custom tax settings for each role** separate from store defaults: disable taxes or hide them on shop and checkout pages
 
 With role-based pricing in WooCommerce, you can create custom prices by user role. This means that users with a certain role will see different prices for the same product than users with another role. For example, you might offer a discount to wholesale customers who buy in bulk, or charge a premium for products sold to non-registered users.
-The WooCommerce Role Based Pricing by Meow Crew plugin contains everything you need to run a successful wholesale or membership business, which often requires special offers for various customer groups. It stands out favorably among other plugins by offering every possible feature you need. So don't hesitate, and give it a try.
+The Role Based Pricing for Woo by Meow Crew plugin contains everything you need to run a successful wholesale or membership business, which often requires special offers for various customer groups. It stands out favorably among other plugins by offering every possible feature you need. So don't hesitate, and give it a try.
 You can find instructions on how to mass import wholesale and role-based prices here  - **[Mass import product prices by user roles in WooCommerce](https://meow-crew.com/import-product-prices-by-user-roles-in-woocommerce)**
 
 
@@ -70,6 +70,13 @@ You can find instructions on how to mass import wholesale and role-based prices 
 13. Taxes settings based on user role
 
 == Changelog ==
+
+2025-07-11 - version 1.6.3
+* Update: Update code due to WordPress.org compliance
+
+2025-07-08 - version 1.6.2
+* Update: Freemius SDK update to 2.12.1
+* Update: Bump WordPress and WooCommerce versions compatibility
 
 2025-04-20 - version 1.6.1
 * Update: Freemius SDK update

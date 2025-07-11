@@ -18,7 +18,8 @@ class DeleteRoleAction extends RoleManagementPageAction {
 				'error', true );
 		}
 
-		wp_redirect( wp_get_referer() );
+		wp_safe_redirect( wp_get_referer() );
+		exit;
 
 	}
 

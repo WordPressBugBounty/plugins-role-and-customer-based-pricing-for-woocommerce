@@ -24,7 +24,8 @@ class NewRoleAction extends RoleManagementPageAction {
 
 		$this->getContainer()->getAdminNotifier()->flash( __( 'The role has been added successfully.', 'role-and-customer-based-pricing-for-woocommerce' ), 'success', true );
 
-		wp_redirect( wp_get_referer() );
+		wp_safe_redirect( wp_get_referer() );
+		exit;
 	}
 
 	public function validate() {

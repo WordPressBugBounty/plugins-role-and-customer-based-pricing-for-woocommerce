@@ -32,7 +32,8 @@ abstract class RoleManagementPageAction {
 		} catch ( Exception $exception ) {
 			$this->getContainer()->getAdminNotifier()->flash( $exception->getMessage(), AdminNotifier::ERROR, true );
 
-			return wp_redirect( wp_get_referer() );
+			wp_safe_redirect( wp_get_referer() );
+			exit;
 		}
 	}
 

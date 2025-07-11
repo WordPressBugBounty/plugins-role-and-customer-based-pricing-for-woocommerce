@@ -11,16 +11,16 @@
     <div class="rcbp-alert__text">
         <div class="rcbp-alert__inner">
             <?php
-                _e( 'Thanks! You are using premium version of the plugin!', 'role-and-customer-based-pricing-for-woocommerce' );
+				esc_html_e( 'Thanks! You are using premium version of the plugin!', 'role-and-customer-based-pricing-for-woocommerce' );
             ?>
         </div>
     </div>
 
     <div class="rcbp-alert__buttons">
         <div class="rcbp-alert__inner">
-            <a class="rcbp-button rcbp-button--accent" href="<?php echo $accountUrl; ?>"><?php _e( 'My Account',
+            <a class="rcbp-button rcbp-button--accent" href="<?php echo $accountUrl; ?>"><?php esc_html_e( 'My Account',
 			        'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
-            <a class="rcbp-button rcbp-button--default" href="<?php echo $contactUsUrl; ?>"><?php _e( 'Contact us', 'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
+            <a class="rcbp-button rcbp-button--default" href="<?php echo $contactUsUrl; ?>"><?php esc_html_e( 'Contact us', 'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
         </div>
     </div>
 </div>

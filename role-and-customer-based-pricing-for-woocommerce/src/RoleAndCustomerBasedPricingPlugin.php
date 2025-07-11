@@ -27,7 +27,7 @@ use MeowCrew\RoleAndCustomerBasedPricing\Services\Export\WooCommerce as WooComme
  */
 class RoleAndCustomerBasedPricingPlugin {
     use ServiceContainerTrait;
-    const VERSION = '1.6.1';
+    const VERSION = '1.6.3';
 
     /**
      * RoleAndCustomerBasedPricingPlugin constructor.
@@ -101,7 +101,7 @@ class RoleAndCustomerBasedPricingPlugin {
 
     public function checkRequirements() {
         /* translators: %s = required plugin */
-        $message = __( 'Role and Customer Based Pricing for WooCommerce requires %s plugin to be active!', 'role-and-customer-based-pricing-for-woocommerce' );
+        $message = 'Role and Customer Based Pricing for WooCommerce requires %s plugin to be active!';
         $plugins = $this->getRequiredPluginsToBeActive();
         if ( count( $plugins ) ) {
             foreach ( $plugins as $plugin ) {

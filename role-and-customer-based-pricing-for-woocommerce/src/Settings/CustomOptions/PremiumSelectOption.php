@@ -100,7 +100,7 @@ class PremiumSelectOption {
 				<?php if ( $value['is_free'] ): ?>
                     <br>
                     <p class="description">
-                        <b><?php esc_html_e( 'Available in the premium version' ); ?></b>
+                        <b><?php esc_html_e( 'Available in the premium version', 'role-and-customer-based-pricing-for-woocommerce' ); ?></b>
                         <a target="_blank" style="color:red"
                            href="<?php echo esc_url( racbpfw_fs()->get_upgrade_url() ) ?>">
 							<?php esc_html_e( 'Upgrade now', 'role-and-customer-based-pricing-for-woocommerce' ); ?>

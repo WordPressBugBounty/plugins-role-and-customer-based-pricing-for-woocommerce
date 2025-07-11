@@ -19,7 +19,7 @@
     <div class="rcbp-alert__text">
         <div class="rcbp-alert__inner">
 	        <?php
-	        _e( 'You are using the free version of plugin. Upgrade to premium version to get all features.',
+	        esc_html_e( 'You are using the free version of plugin. Upgrade to premium version to get all features.',
 		        'role-and-customer-based-pricing-for-woocommerce' );
 	        ?>
         </div>
@@ -28,9 +28,9 @@
     <div class="rcbp-alert__buttons">
         <div class="rcbp-alert__inner">
 
-            <a class="rcbp-button rcbp-button--accent rcbp-button--bounce" href="<?php echo $upgradeUrl; ?>"><?php _e( 'Upgrade to Premium!',
+            <a class="rcbp-button rcbp-button--accent rcbp-button--bounce" href="<?php echo $upgradeUrl; ?>"><?php esc_html_e( 'Upgrade to Premium!',
 			        'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
-            <a class="rcbp-button rcbp-button--default" href="<?php echo $contactUsUrl; ?>"><?php _e( 'Contact Us!',
+            <a class="rcbp-button rcbp-button--default" href="<?php echo $contactUsUrl; ?>"><?php esc_html_e( 'Contact Us!',
 			        'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
         </div>
     </div>

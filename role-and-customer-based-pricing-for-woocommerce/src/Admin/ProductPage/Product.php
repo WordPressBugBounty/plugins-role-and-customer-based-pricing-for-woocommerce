@@ -75,13 +75,13 @@ class Product {
 
 			wp_send_json( array(
 				'success'       => false,
-				'error_message' => __( 'Invalid pricing rule', 'role-specific-pricing' ),
+				'error_message' => __( 'Invalid pricing rule', 'role-and-customer-based-pricing-for-woocommerce' ),
 			) );
 		}
 
 		wp_send_json( array(
 			'success'       => false,
-			'error_message' => __( 'Invalid nonce', 'role-specific-pricing' ),
+			'error_message' => __( 'Invalid nonce', 'role-and-customer-based-pricing-for-woocommerce' ),
 		) );
 	}
 

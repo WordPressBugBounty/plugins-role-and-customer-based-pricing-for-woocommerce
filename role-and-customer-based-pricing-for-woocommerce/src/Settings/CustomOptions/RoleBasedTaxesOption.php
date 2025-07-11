@@ -121,7 +121,7 @@ class RoleBasedTaxesOption {
                                 <fieldset>
                                     <p class="description">
                                         <b><?php 
-                esc_html_e( 'Available in the premium version' );
+                esc_html_e( 'Available in the premium version', 'role-and-customer-based-pricing-for-woocommerce' );
                 ?></b>
                                         <a target="_blank" style="color:red"
                                            href="<?php 

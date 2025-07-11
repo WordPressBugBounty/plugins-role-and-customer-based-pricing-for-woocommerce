@@ -48,7 +48,7 @@ if ( 'role' === $type ) {
 		</div>
 		<div class="rcbp-pricing-rule__actions">
 			<span class="rcbp-pricing-rule__action-toggle-view rcbp-pricing-rule__action-toggle-view--open"></span>
-			<a href="#" class="rcbp-pricing-rule-action--delete"><?php esc_attr_e( 'Remove', 'woocommerce' ); ?></a>
+			<a href="#" class="rcbp-pricing-rule-action--delete"><?php esc_attr_e( 'Remove', 'role-and-customer-based-pricing-for-woocommerce' ); ?></a>
 		</div>
 	</div>
 	<div class="rcbp-pricing-rule__content">

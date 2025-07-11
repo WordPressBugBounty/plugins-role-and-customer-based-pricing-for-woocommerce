@@ -46,7 +46,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php endforeach; ?>
 			</select>
 
-			<?php echo wc_help_tip( __( 'Choose the categories for which this pricing rule will apply. The rule applies to all products in the category.', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
+			<?php echo wp_kses_post( wc_help_tip( __( 'Choose the categories for which this pricing rule will apply. The rule applies to all products in the category.', 'role-and-customer-based-pricing-for-woocommerce' ) ) ); ?>
 		</p>
 
 		<p class="form-field">
@@ -70,7 +70,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php endforeach; ?>
 			</select>
 
-			<?php echo wc_help_tip( __( 'Pick up products for which you want to apply the pricing rule.', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
+			<?php echo wp_kses_post( wc_help_tip( __( 'Pick up products for which you want to apply the pricing rule.', 'role-and-customer-based-pricing-for-woocommerce' ) ) ); ?>
 		</p>
 
 		<hr class="rcbp-title-separator rcbp-title-separator--light"
@@ -94,7 +94,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php endforeach; ?>
 			</select>
 
-			<?php echo wc_help_tip( __( 'Choose to what user roles this rule will be relevant. Applies to all users with those roles.', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
+			<?php echo wp_kses_post( wc_help_tip( __( 'Choose to what user roles this rule will be relevant. Applies to all users with those roles.', 'role-and-customer-based-pricing-for-woocommerce' ) ) ); ?>
 		</p>
 
 		<p class="form-field">
@@ -117,7 +117,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php endforeach; ?>
 			</select>
 
-			<?php echo wc_help_tip( __( 'Pick up separate user accounts, which will be affected by this rule. ', 'role-and-customer-based-pricing-for-woocommerce' ) ); ?>
+			<?php echo wp_kses_post( wc_help_tip( __( 'Pick up separate user accounts, which will be affected by this rule. ', 'role-and-customer-based-pricing-for-woocommerce' ) ) ); ?>
 		</p>
 	</div>
 </div>

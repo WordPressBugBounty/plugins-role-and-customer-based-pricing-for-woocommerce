@@ -15,7 +15,7 @@
 			style="width: 200px;">
 	</select>
 
-	<button class="button rcbp-add-new-rule-form__add-button"> <?php esc_attr_e( 'Setup for customer', 'role-specific-pricing' ); ?></button>
+	<button class="button rcbp-add-new-rule-form__add-button"> <?php esc_attr_e( 'Setup for customer', 'role-and-customer-based-pricing-for-woocommerce' ); ?></button>
 
 	<div class="clear"></div>
 </div>

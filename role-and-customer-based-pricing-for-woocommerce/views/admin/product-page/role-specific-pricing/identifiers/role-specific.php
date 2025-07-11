@@ -17,7 +17,7 @@
 		<?php endforeach; ?>
 	</select>
 
-	<button class="button rcbp-add-new-rule-form__add-button"> <?php esc_attr_e( 'Setup for role', 'role-specific-pricing' ); ?></button>
+	<button class="button rcbp-add-new-rule-form__add-button"> <?php esc_attr_e( 'Setup for role', 'role-and-customer-based-pricing-for-woocommerce' ); ?></button>
 
 	<div class="clear"></div>
 </div>
