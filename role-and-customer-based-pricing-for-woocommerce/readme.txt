@@ -2,9 +2,9 @@
 Contributors: meowcrew, freemius
 Tags: Role based pricing, prices by user role, wholesale, woocommerce, dynamic price
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GNU General Public License v2
 License URI: https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
 Create individual pricing for customers based on their role or account. Works with all types of products along with Import-Export tools
@@ -70,6 +70,11 @@ You can find instructions on how to mass import wholesale and role-based prices 
 13. Taxes settings based on user role
 
 == Changelog ==
+
+2025-12-26 - version 1.6.4
+* Fix: load_text_domain notice
+* Update: Freemius SDK to the latest version
+* Update: Bump compatibility with the latest WooCommerce & WordPress versions
 
 2025-07-11 - version 1.6.3
 * Update: Update code due to WordPress.org compliance

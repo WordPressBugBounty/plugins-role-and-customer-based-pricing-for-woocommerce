@@ -6,7 +6,7 @@
 	 * Plugin URI:        https://meow-crew.com/role-and-customer-based-pricing-for-wooommerce
 	 * Requires Plugins:  woocommerce
 	 * Description:       Use this plugin to create pricing rules based on user roles or individual pricing for various customers.
-	 * Version:           1.6.3
+	 * Version:           1.6.4
 	 * Author:            Meow Crew
 	 * Author URI:        https://meow-crew.com
 	 * License:           GPL-2.0+
@@ -17,7 +17,7 @@
 	 * Requires PHP: 5.6
 	 *
 	 * WC requires at least: 5.0
-	 * WC tested up to: 10.0
+	 * WC tested up to: 14.0
 	 *
 	 	 */
 

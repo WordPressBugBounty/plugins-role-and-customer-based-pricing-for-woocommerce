@@ -132,7 +132,7 @@ class PricingRule {
 		return $this->originalProductPrice;
 	}
 	
-	public function getPrice( WC_Product $product = null ) {
+	public function getPrice( ?WC_Product $product = null ) {
 		
 		if ( $this->getPriceType() === 'percentage' ) {
 			
