@@ -10,7 +10,7 @@ class WooCommerceProductAddons {
 			return $product;
 		} );
 	}
-
+	
 	/**
 	 * Add extra addons costs to product price in cart.
 	 *
@@ -20,16 +20,16 @@ class WooCommerceProductAddons {
 	 * @return int|mixed
 	 */
 	public function addAddonsPrice( $price, $cart_item ) {
-
+		
 		$extra_cost = 0;
-
+		
 		if ( isset( $cart_item['addons'] ) && false !== $price ) {
 			foreach ( $cart_item['addons'] as $addon ) {
 				$price_type  = $addon['price_type'];
 				$addon_price = $addon['price'];
-
+				
 				switch ( $price_type ) {
-
+					
 					case 'percentage_based':
 						$extra_cost += $price * ( $addon_price / 100 );
 						break;
@@ -41,10 +41,10 @@ class WooCommerceProductAddons {
 						break;
 				}
 			}
-
+			
 			return $price + $extra_cost;
 		}
-
+		
 		return $price;
 	}
 }

@@ -21,6 +21,20 @@ class GlobalPricingRule extends PricingRule {
 	public $includedProducts = array();
 
 	/**
+	 * Included product tags
+	 *
+	 * @var array
+	 */
+	public $includedProductTags = array();
+
+	/**
+	 * Included product brands
+	 *
+	 * @var array
+	 */
+	public $includedProductBrands = array();
+
+	/**
 	 * Included product roles
 	 *
 	 * @var array
@@ -97,6 +111,42 @@ class GlobalPricingRule extends PricingRule {
 	}
 
 	/**
+	 * Get included product tags
+	 *
+	 * @return array
+	 */
+	public function getIncludedProductTags() {
+		return $this->includedProductTags;
+	}
+
+	/**
+	 * Set included product tags
+	 *
+	 * @param array $includedProductTags
+	 */
+	public function setIncludedProductTags( array $includedProductTags ) {
+		$this->includedProductTags = $includedProductTags;
+	}
+
+	/**
+	 * Get included product brands
+	 *
+	 * @return array
+	 */
+	public function getIncludedProductBrands() {
+		return $this->includedProductBrands;
+	}
+
+	/**
+	 * Set included product brands
+	 *
+	 * @param array $includedProductBrands
+	 */
+	public function setIncludedProductBrands( array $includedProductBrands ) {
+		$this->includedProductBrands = $includedProductBrands;
+	}
+
+	/**
 	 * Get included user roles
 	 *
 	 * @return array
@@ -136,6 +186,8 @@ class GlobalPricingRule extends PricingRule {
 		return array_merge( parent::asArray(), array(
 			'included_categories' => $this->getIncludedProductCategories(),
 			'included_products'   => $this->getIncludedProducts(),
+			'included_tags'       => $this->getIncludedProductTags(),
+			'included_brands'     => $this->getIncludedProductBrands(),
 			'included_users'      => $this->getIncludedUsers(),
 			'included_users_role' => $this->getIncludedUserRoles(),
 			'rule_id'             => $this->getRuleId(),
@@ -164,6 +216,8 @@ class GlobalPricingRule extends PricingRule {
 
 			'_rps_included_categories' => $rule->getIncludedProductCategories(),
 			'_rps_included_products'   => $rule->getIncludedProducts(),
+			'_rps_included_tags'       => $rule->getIncludedProductTags(),
+			'_rps_included_brands'     => $rule->getIncludedProductBrands(),
 			'_rps_included_users'      => $rule->getIncludedUsers(),
 			'_rps_included_user_roles' => $rule->getIncludedUserRoles(),
 			'_rps_is_suspended'        => $rule->isSuspended() ? 'yes' : 'no',
@@ -198,6 +252,8 @@ class GlobalPricingRule extends PricingRule {
 
 		$includedCategoriesIds = array_filter( array_map( 'intval', (array) get_post_meta( $ruleId, '_rps_included_categories', true ) ) );
 		$includedProductsIds   = array_filter( array_map( 'intval', (array) get_post_meta( $ruleId, '_rps_included_products', true ) ) );
+		$includedTagsIds       = array_filter( array_map( 'intval', (array) get_post_meta( $ruleId, '_rps_included_tags', true ) ) );
+		$includedBrandsIds     = array_filter( array_map( 'intval', (array) get_post_meta( $ruleId, '_rps_included_brands', true ) ) );
 
 		$includedUsersRole = array_filter( (array) get_post_meta( $ruleId, '_rps_included_user_roles', true ), function ( $role ) use ( $existingRoles ) {
 			return array_key_exists( $role, $existingRoles );
@@ -208,9 +264,11 @@ class GlobalPricingRule extends PricingRule {
 		$isSuspended = get_post_meta( $ruleId, '_rps_is_suspended', true ) === 'yes';
 
 		$priceRule->setIncludedProductCategories( $includedCategoriesIds );
+		$priceRule->setIncludedProducts( $includedProductsIds );
+		$priceRule->setIncludedProductTags( $includedTagsIds );
+		$priceRule->setIncludedProductBrands( $includedBrandsIds );
 		$priceRule->setIncludedUsers( $includedUsers );
 		$priceRule->setIncludedUsersRole( $includedUsersRole );
-		$priceRule->setIncludedProducts( $includedProductsIds );
 		$priceRule->setIsSuspended( $isSuspended );
 
 		return $priceRule;
@@ -280,6 +338,23 @@ class GlobalPricingRule extends PricingRule {
 			$productLimitations = true;
 
 			if ( ! empty( array_intersect( $parentProduct->get_category_ids(), $this->getIncludedProductCategories() ) ) ) {
+				$productMatched = true;
+			}
+		}
+
+		if ( ! empty( $this->getIncludedProductTags() ) ) {
+			$productLimitations = true;
+
+			if ( ! empty( array_intersect( $parentProduct->get_tag_ids(), $this->getIncludedProductTags() ) ) ) {
+				$productMatched = true;
+			}
+		}
+
+		if ( ! empty( $this->getIncludedProductBrands() ) ) {
+			$productLimitations = true;
+
+			$product_brands = wp_get_post_terms( $parentProduct->get_id(), 'product_brand', array( 'fields' => 'ids' ) );
+			if ( ! is_wp_error( $product_brands ) && ! empty( array_intersect( $product_brands, $this->getIncludedProductBrands() ) ) ) {
 				$productMatched = true;
 			}
 		}

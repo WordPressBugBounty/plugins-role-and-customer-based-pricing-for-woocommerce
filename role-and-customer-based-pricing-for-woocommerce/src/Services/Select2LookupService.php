@@ -13,10 +13,14 @@ class Select2LookupService {
 
 	const CATEGORIES_SEARCH_ACTION = 'woocommerce_json_search_rcbp_categories';
 	const CUSTOMERS_SEARCH_ACTION = 'woocommerce_json_search_rcbp_customers';
+	const TAGS_SEARCH_ACTION = 'woocommerce_json_search_rcbp_tags';
+	const BRANDS_SEARCH_ACTION = 'woocommerce_json_search_rcbp_brands';
 
 	public function __construct() {
 		add_action( 'wp_ajax_' . self::CATEGORIES_SEARCH_ACTION, array( $this, 'categoriesSearchHandler' ) );
 		add_action( 'wp_ajax_' . self::CUSTOMERS_SEARCH_ACTION, array( $this, 'customersSearchHandler' ) );
+		add_action( 'wp_ajax_' . self::TAGS_SEARCH_ACTION, array( $this, 'tagsSearchHandler' ) );
+		add_action( 'wp_ajax_' . self::BRANDS_SEARCH_ACTION, array( $this, 'brandsSearchHandler' ) );
 	}
 
 	public function customersSearchHandler() {
@@ -91,6 +95,80 @@ class Select2LookupService {
 				foreach ( $terms as $term ) {
 					if ( $term instanceof WP_Term ) {
 						$_terms[ $term->term_id ] = $term->name;
+					}
+				}
+
+				wp_send_json( $_terms );
+			}
+		}
+
+		wp_send_json( array() );
+	}
+
+	public function tagsSearchHandler() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json( array() );
+		}
+
+		$term = isset( $_GET['term'] ) ? sanitize_text_field( $_GET['term'] ) : false;
+
+		if ( $term ) {
+			$args = array(
+				'taxonomy'   => array( 'product_tag' ),
+				'orderby'    => 'id',
+				'order'      => 'ASC',
+				'limit'      => 5,
+				'hide_empty' => false,
+				'fields'     => 'all',
+				'name__like' => $term
+			);
+
+			$terms = get_terms( $args );
+
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				$_terms = array();
+
+				foreach ( $terms as $termObj ) {
+					if ( $termObj instanceof WP_Term ) {
+						$_terms[ $termObj->term_id ] = $termObj->name;
+					}
+				}
+
+				wp_send_json( $_terms );
+			}
+		}
+
+		wp_send_json( array() );
+	}
+
+	public function brandsSearchHandler() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json( array() );
+		}
+
+		$term = isset( $_GET['term'] ) ? sanitize_text_field( $_GET['term'] ) : false;
+
+		if ( $term ) {
+			$args = array(
+				'taxonomy'   => array( 'product_brand' ),
+				'orderby'    => 'id',
+				'order'      => 'ASC',
+				'limit'      => 5,
+				'hide_empty' => false,
+				'fields'     => 'all',
+				'name__like' => $term
+			);
+
+			$terms = get_terms( $args );
+
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				$_terms = array();
+
+				foreach ( $terms as $termObj ) {
+					if ( $termObj instanceof WP_Term ) {
+						$_terms[ $termObj->term_id ] = $termObj->name;
 					}
 				}
 

@@ -34,20 +34,19 @@ class RoleBasedTaxesOption {
 					}
 				}).filter(':checked').trigger('change');
 			});
-        </script>
-
-        <tr>
-            <th scope="row" class="titledesc">
-                <label for="<?php 
+		</script>
+		<tr>
+			<th scope="row" class="titledesc">
+				<label for="<?php 
         echo esc_attr( $value['id'] );
         ?>"><?php 
         echo esc_html( $value['title'] );
         ?></label>
-            </th>
-            <td class="forminp forminp-<?php 
+			</th>
+			<td class="forminp forminp-<?php 
         echo esc_attr( sanitize_title( $value['type'] ) );
         ?>">
-				
+
 				<?php 
         foreach ( array_reverse( wp_roles()->roles ) as $slug => $role ) {
             ?>

@@ -22,7 +22,7 @@ class NewRoleAction extends RoleManagementPageAction {
 
 		add_role( $roleName, $roleName, $newCapabilities );
 
-		$this->getContainer()->getAdminNotifier()->flash( __( 'The role has been added successfully.', 'role-and-customer-based-pricing-for-woocommerce' ), 'success', true );
+		$this->getContainer()->getAdminNotifier()->flash( esc_html__( 'The role has been added successfully.', 'role-and-customer-based-pricing-for-woocommerce' ), 'success', true );
 
 		wp_safe_redirect( wp_get_referer() );
 		exit;
@@ -31,13 +31,13 @@ class NewRoleAction extends RoleManagementPageAction {
 	public function validate() {
 
 		if ( ! $this->getRoleName() ) {
-			throw new Exception( __( 'Role name is required.', 'role-and-customer-based-pricing-for-woocommerce' ) );
+			throw new Exception( esc_html__( 'Role name is required.', 'role-and-customer-based-pricing-for-woocommerce' ) );
 		}
 
 		$roles = wp_roles()->roles;
 
 		if ( $this->getInheritedRole() && ! array_key_exists( $this->getInheritedRole(), $roles ) ) {
-			throw new Exception( __( 'Invalid inherited role.', 'role-and-customer-based-pricing-for-woocommerce' ) );
+			throw new Exception( esc_html__( 'Invalid inherited role.', 'role-and-customer-based-pricing-for-woocommerce' ) );
 		}
 
 		parent::validate();

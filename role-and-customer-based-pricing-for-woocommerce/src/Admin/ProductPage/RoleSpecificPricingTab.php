@@ -26,7 +26,7 @@ class RoleSpecificPricingTab {
 				'show_if_course',
 				'show_if_subscription',
 				'show_if_variable_subscription'
-			)
+			, 'show_if_course' )
 		);
 
 		return $productTabs;
@@ -80,7 +80,6 @@ class RoleSpecificPricingTab {
 					// wipe out
 					break;
 				}
-
 				$data[ $field ] = array_map( 'sanitize_text_field', (array) $_POST[ $field ] );
 			}
 

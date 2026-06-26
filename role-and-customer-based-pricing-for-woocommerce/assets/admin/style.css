@@ -149,6 +149,11 @@
     display: none;
 }
 
+.woocommerce_variation .rcbp-pricing-rule-block .rcbp-pricing-rule-form__flat-prices-warning {
+    display: none !important;
+}
+
+
 .rcbp-pricing-rule-block--simple .rcbp-pricing-rule-form input[type=text], .rcbp-pricing-rule-block--simple .rcbp-pricing-rule-form input[type=number] {
     width: 80% !important;
 }
@@ -238,12 +243,11 @@
     background: #d63638;
 }
 
-
-/**
-*******
-SETTINGS
-*******
-**/
+    /**
+    *******
+    SETTINGS
+    *******
+    **/
 
 
 input[type="checkbox"].rcbp-toggle-switch {

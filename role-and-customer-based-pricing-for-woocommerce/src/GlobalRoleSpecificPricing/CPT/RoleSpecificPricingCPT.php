@@ -12,6 +12,7 @@ use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Columns\A
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Columns\AppliedProducts;
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Columns\Status;
 use WP_Post;
+use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Form\Form;
 
 use function is_empty;
 
@@ -38,9 +39,10 @@ class RoleSpecificPricingCPT {
 	protected static $globalRules = null;
 
 	public function __construct() {
+		new Form();
+
 		add_action( 'init', array( $this, 'register' ) );
 		add_action( 'manage_posts_extra_tablenav', array( $this, 'renderBlankState' ) );
-		add_action( 'add_meta_boxes', array( $this, 'registerMetaboxes' ), 10, 3 );
 
 		add_filter( 'woocommerce_navigation_screen_ids', array( $this, 'addPageToWooCommerceScreen' ) );
 
@@ -157,32 +159,14 @@ class RoleSpecificPricingCPT {
 		return $ids;
 	}
 
-	public function registerMetaboxes() {
-
-		add_meta_box( 'rcbp_rules_metabox', __( 'Rules', 'role-and-customer-based-pricing-for-woocommerce' ), array(
-			$this,
-			'renderRulesMetabox'
-		), self::SLUG );
-
-		add_meta_box( 'rcbp_pricing_metabox', __( 'Pricing', 'role-and-customer-based-pricing-for-woocommerce' ), array(
-			$this,
-			'renderPricingMetabox'
-		), self::SLUG );
-	}
-
-	public function renderRulesMetabox() {
-		$this->getContainer()->getFileManager()->includeTemplate( 'admin/global-rules/role-specific-pricing/rules.php', array(
-			'fileManager' => $this->getContainer()->getFileManager(),
-			'priceRule'   => $this->getPricingRuleInstance(),
-		) );
-	}
-
 	public function savePricingRule( $ruleId ) {
 		// Save pricing
 		if ( wp_verify_nonce( true, true ) ) {
 			// as phpcs comments at Woo is not available, we have to do such a trash
 			$woo = 'Woo, please add ignoring comments to your phpcs checker';
 		}
+
+		$postedData = $_POST;
 
 		$data = array();
 
@@ -197,12 +181,12 @@ class RoleSpecificPricingCPT {
 		);
 
 		foreach ( $pricingFields as $field ) {
-			if ( ! isset( $_POST[ $field ] ) ) {
+			if ( ! isset( $postedData[ $field ] ) ) {
 				$data[ $field ] = '';
-			} else if ( ! isset( $_POST[ $field ]['global'] ) ) {
+			} else if ( ! isset( $postedData[ $field ]['global'] ) ) {
 				$data[ $field ] = '';
 			} else {
-				$data[ $field ] = sanitize_text_field( $_POST[ $field ]['global'] );
+				$data[ $field ] = $postedData[ $field ]['global'];
 			}
 		}
 
@@ -218,19 +202,23 @@ class RoleSpecificPricingCPT {
 
 		$existingRoles = wp_roles()->roles;
 
-		$includedCategoriesIds = isset( $_POST['_rps_included_categories'] ) ? array_filter( array_map( 'intval', (array) $_POST['_rps_included_categories'] ) ) : array();
-		$includedProductsIds   = isset( $_POST['_rps_included_products'] ) ? array_filter( array_map( 'intval', (array) $_POST['_rps_included_products'] ) ) : array();
+		$includedCategoriesIds = isset( $postedData['_rps_included_categories'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_categories'] ) ) : array();
+		$includedProductsIds   = isset( $postedData['_rps_included_products'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_products'] ) ) : array();
+		$includedTagsIds       = isset( $postedData['_rps_included_tags'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_tags'] ) ) : array();
+		$includedBrandsIds     = isset( $postedData['_rps_included_brands'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_brands'] ) ) : array();
 
-		$includedUsersRole = isset( $_POST['_rps_included_user_roles'] ) ? array_filter( (array) $_POST['_rps_included_user_roles'], function ( $role ) use ( $existingRoles ) {
+		$includedUsersRole = isset( $postedData['_rps_included_user_roles'] ) ? array_filter( (array) $postedData['_rps_included_user_roles'], function ( $role ) use ( $existingRoles ) {
 			return array_key_exists( $role, $existingRoles );
 		} ) : array();
 
-		$includedUsers = isset( $_POST['_rps_included_users'] ) ? array_filter( array_map( 'intval', (array) $_POST['_rps_included_users'] ) ) : array();
+		$includedUsers = isset( $postedData['_rps_included_users'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_users'] ) ) : array();
 
 		$pricingRule->setIncludedProductCategories( $includedCategoriesIds );
+		$pricingRule->setIncludedProductTags( $includedTagsIds );
+		$pricingRule->setIncludedProductBrands( $includedBrandsIds );
+		$pricingRule->setIncludedProducts( $includedProductsIds );
 		$pricingRule->setIncludedUsers( $includedUsers );
 		$pricingRule->setIncludedUsersRole( $includedUsersRole );
-		$pricingRule->setIncludedProducts( $includedProductsIds );
 
 		try {
 			GlobalPricingRule::save( $pricingRule, $ruleId );
@@ -239,23 +227,10 @@ class RoleSpecificPricingCPT {
 		}
 	}
 
-	public function renderPricingMetabox() {
-		?>
-        <div id="<?php echo esc_attr( self::SLUG ); ?>" class="panel woocommerce_options_panel">
-			<?php
-			$this->getContainer()->getFileManager()->includeTemplate( 'admin/global-rules/role-specific-pricing/pricing.php', array(
-				'fileManager' => $this->getContainer()->getFileManager(),
-				'priceRule'   => $this->getPricingRuleInstance(),
-			) );
-			?>
-        </div>
-		<?php
-	}
-
 	public function renderBlankState( $which ) {
 		global $post_type;
 
-		if ( self::SLUG === $post_type && 'bottom' === $which ) {
+		if ( self::SLUG === $post_type && 'top' === $which ) {
 			$counts = (array) wp_count_posts( $post_type );
 			unset( $counts['auto-draft'] );
 			$count = array_sum( $counts );
@@ -266,28 +241,88 @@ class RoleSpecificPricingCPT {
 
 			?>
 
-            <div class="woocommerce-BlankState">
+			<div class="rcbp-blank-state">
+				<div class="rcbp-blank-state__inner">
+					<h2 class="rcbp-blank-state__title">
+						<?php esc_html_e( 'Create Your First Global Pricing Rule', 'role-and-customer-based-pricing-for-woocommerce' ); ?>
+					</h2>
+					
+					<p class="rcbp-blank-state__description">
+						<?php esc_html_e( 'There are no pricing rules yet. To create pricing dependencies on user roles or specific customers, click on the button below.', 'role-and-customer-based-pricing-for-woocommerce' ); ?>
+					</p>
 
-                <h2 class="woocommerce-BlankState-message">
-					<?php esc_html_e( 'There are no pricing rules yet. To create pricing dependencies on user roles/customers click on the button below.', 'role-and-customer-based-pricing-for-woocommerce' ); ?>
-                </h2>
+					<div class="rcbp-blank-state__actions">
+						<a class="rcbp-button-primary button button-primary button-large"
+						   href="<?php echo esc_url( admin_url( 'post-new.php?post_type=' . self::SLUG ) ); ?>">
+							<span style="line-height: 1; padding-top: 2px;"><?php esc_html_e( 'Create a pricing rule', 'role-and-customer-based-pricing-for-woocommerce' ); ?></span>
+						</a>
+					</div>
+				</div>
+			</div>
 
-                <div class="woocommerce-BlankState-buttons">
-                    <a class="woocommerce-BlankState-cta button-primary button"
-                       href="<?php echo esc_url( admin_url( 'post-new.php?post_type=' . self::SLUG ) ); ?>">
-						<?php esc_html_e( 'Create a pricing rule', 'role-and-customer-based-pricing-for-woocommerce' ); ?>
-                    </a>
-                </div>
-            </div>
+			<style>
+				.rcbp-blank-state {
+					background: #ffffff;
+					border: 1px solid #e2e4e7;
+					border-radius: 8px;
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+					text-align: center;
+					margin: 40px auto;
+					max-width: 600px;
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+					overflow: hidden;
+				}
+				
+				.rcbp-blank-state__inner {
+					padding: 50px 40px;
+				}
 
-            <style type="text/css">#posts-filter .wp-list-table, #posts-filter .tablenav.top, .tablenav.bottom .actions, .wrap .subsubsub {
-                    display: none;
-                }
+				.rcbp-blank-state__title {
+					font-size: 24px;
+					font-weight: 600;
+					color: #1d2327;
+					margin: 0 0 12px 0;
+					line-height: 1.3;
+				}
+				
+				.rcbp-blank-state__description {
+					font-size: 15px;
+					color: #646970;
+					line-height: 1.6;
+					margin: 0 0 32px 0;
+					max-width: 480px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				
+				.rcbp-button-primary {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0 24px !important;
+					height: 42px !important;
+					font-size: 14px !important;
+					font-weight: 600 !important;
+					border-radius: 4px !important;
+					transition: all 0.2s ease;
+				}
+				
+				.rcbp-button-primary:hover {
+					transform: translateY(-1px);
+					box-shadow: 0 4px 8px rgba(0, 112, 188, 0.2);
+				}
 
-                #posts-filter .tablenav.bottom {
-                    height: auto;
-                }
-            </style>
+				#posts-filter .wp-list-table,
+				#posts-filter .tablenav.bottom,
+				.tablenav.top .actions,
+				.wrap .subsubsub {
+					display: none;
+				}
+
+				#posts-filter .tablenav.top {
+					height: auto;
+				}
+			</style>
 			<?php
 		}
 	}

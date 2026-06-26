@@ -56,6 +56,7 @@ class PricingRulesDispatcher {
 		if ( ! $product || ! $product->is_type( array(
 				'variation',
 				'simple',
+				'course',
 				'subscription',
 				'subscription-variation',
 				'course',
@@ -78,52 +79,52 @@ class PricingRulesDispatcher {
 			$customerSpecificRules = PricingRulesManager::getProductCustomerSpecificPricingRules( $parentId,
 				$validatePricing );
 		}
-		
+
 		foreach ( $customerSpecificRules as $userId => $rule ) {
 			if ( intval( $userId ) === $user->ID ) {
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-				
+
 				return $rule;
 			}
 		}
-		
+
 		$roleSpecificRules = PricingRulesManager::getProductRoleSpecificPricingRules( $productId, $validatePricing );
 		
 		if ( empty( $roleSpecificRules ) && $product->get_type() === 'variation' ) {
 			$roleSpecificRules = PricingRulesManager::getProductRoleSpecificPricingRules( $parentId, $validatePricing );
 		}
-		
+
 		foreach ( $roleSpecificRules as $role => $rule ) {
 			if ( in_array( $role, $user->roles ) ) {
 				// in case there is a variation. By default, rule is tied to the parent product
 				$rule->setProductId( $productId );
-				
+
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-				
+
 				return $rule;
 			}
 		}
-		
+
 		// role-and-customer-based-pricing-for-woocommerce: make it as a generator to save performance
 		$globalRules = RoleSpecificPricingCPT::getGlobalRules( $validatePricing );
-		
+
 		foreach ( $globalRules as $rule ) {
-			
+
 			if ( $rule->matchRequirements( $user, $product ) ) {
-				
+
 				$rule->setAppliedProductId( $productId );
-				
+
 				$rule->setOriginalProductPrice( floatval( $product->get_price( 'edit' ) ) );
-				
+
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-				
+
 				return $rule;
 			}
 		}
-		
+
 		self::$dispatchedRules[ $cacheKey ] = false;
-		
+
 		return false;
 	}
-	
+
 }

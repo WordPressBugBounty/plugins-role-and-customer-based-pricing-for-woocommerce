@@ -18,6 +18,6 @@ class Strings {
 	}
 
 	public static function IsNullOrEmpty( $str ) {
-		return ( $str === null || trim( $str ) === '' );
+		return ( null === $str || '' === trim( $str ) );
 	}
 }

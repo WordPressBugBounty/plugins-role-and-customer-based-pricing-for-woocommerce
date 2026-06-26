@@ -11,10 +11,10 @@ class DeleteRoleAction extends RoleManagementPageAction {
 		if ( ! in_array( $roleName, RoleManagement::getStandardRoles() ) ) {
 			remove_role( $roleName );
 
-			$this->getContainer()->getAdminNotifier()->flash( __( 'Role deleted successfully.', 'role-and-customer-based-pricing-for-woocommerce' ) );
+			$this->getContainer()->getAdminNotifier()->flash( esc_html__( 'Role deleted successfully.', 'role-and-customer-based-pricing-for-woocommerce' ) );
 
 		} else {
-			$this->getContainer()->getAdminNotifier()->flash( __( 'Standard roles cannot be deleted or modified.', 'role-and-customer-based-pricing-for-woocommerce' ),
+			$this->getContainer()->getAdminNotifier()->flash( esc_html__( 'Standard roles cannot be deleted or modified.', 'role-and-customer-based-pricing-for-woocommerce' ),
 				'error', true );
 		}
 
@@ -28,7 +28,7 @@ class DeleteRoleAction extends RoleManagementPageAction {
 		$roles = wp_roles()->roles;
 
 		if ( ! $this->getRoleName() || ! array_key_exists( $this->getRoleName(), $roles ) ) {
-			throw new Exception( __( 'Invalid role name', 'role-and-customer-based-pricing-for-woocommerce' ) );
+			throw new Exception( esc_html__( 'Invalid role name', 'role-and-customer-based-pricing-for-woocommerce' ) );
 		}
 
 		parent::validate();

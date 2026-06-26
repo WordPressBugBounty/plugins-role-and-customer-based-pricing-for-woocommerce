@@ -55,7 +55,7 @@ abstract class RoleManagementPageAction {
 		$nonce = isset($_REQUEST['_wpnonce']) ? sanitize_text_field($_REQUEST['_wpnonce']) : null;
 
 		if ( ! wp_verify_nonce( $nonce, $this->getActionSlug() ) ) {
-			throw new Exception( __( 'Invalid Nonce', 'role-and-customer-based-pricing-for-woocommerce' ) );
+			throw new Exception( esc_html__( 'Invalid Nonce', 'role-and-customer-based-pricing-for-woocommerce' ) );
 		}
 	}
 

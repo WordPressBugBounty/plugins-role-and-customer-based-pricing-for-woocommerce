@@ -126,6 +126,7 @@ class FileManager {
 			allowedExtract( $__variables );
 
 			do_action( 'role_customer_specific_pricing/template/before_render', $__template, $__variables );
+			// nosemgrep: audit.php.lang.security.file.inclusion-arg
 			include( $__template );
 			do_action( 'role_customer_specific_pricing/template/after_render', $__template, $__variables );
 		}

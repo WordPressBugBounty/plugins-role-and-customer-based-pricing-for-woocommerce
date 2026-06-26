@@ -38,13 +38,14 @@ $present_rules = array();
 					<?php
 					$present_rules[] = $identifier;
 
+
 					$fileManager->includeTemplate( 'admin/product-page/role-specific-pricing/single-rule.php', array(
-						'identifier'   => $identifier,
-						'pricing_rule' => $pricing_rule,
-						'type'         => $type,
-						'loop'         => $loop,
-						'fileManager'  => $fileManager
-					) ); 
+						'identifier'    => $identifier,
+						'pricing_rule'  => $pricing_rule,
+						'type'          => $type,
+						'loop'          => $loop,
+						'fileManager'   => $fileManager
+					) );
 					?>
 				<?php endforeach; ?>
 			<?php else : ?>

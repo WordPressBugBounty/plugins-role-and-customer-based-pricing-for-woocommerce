@@ -2,6 +2,8 @@
 
 use MeowCrew\RoleAndCustomerBasedPricing\Integrations\Plugins\SmartCoupons;
 use MeowCrew\RoleAndCustomerBasedPricing\Integrations\Plugins\WooCommerceProductAddons;
+use MeowCrew\RoleAndCustomerBasedPricing\Integrations\Plugins\WCPA;
+use MeowCrew\RoleAndCustomerBasedPricing\Integrations\Plugins\WombatProductAddons;
 
 class Integrations {
 	
@@ -14,6 +16,8 @@ class Integrations {
 		$plugins = apply_filters( 'tiered_pricing_table/integrations/plugins', array(
 			WooCommerceProductAddons::class,
 			SmartCoupons::class,
+			WCPA::class,
+			WombatProductAddons::class,
 		) );
 		
 		foreach ( $plugins as $plugin ) {
