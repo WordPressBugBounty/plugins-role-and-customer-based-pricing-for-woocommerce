@@ -1,24 +1,23 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'meow-crew/role-and-customer-based-pricing-for-woocommerce',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
     ),
-    'reference' => 'fa6bd39d711b6ad0dd8f3eddb1805026b143d90a',
-    'name' => 'meow-crew/role-and-customer-based-pricing-for-woocommerce',
-  ),
-  'versions' => 
-  array (
-    'meow-crew/role-and-customer-based-pricing-for-woocommerce' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fa6bd39d711b6ad0dd8f3eddb1805026b143d90a',
+    'versions' => array(
+        'meow-crew/role-and-customer-based-pricing-for-woocommerce' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-  ),
 );

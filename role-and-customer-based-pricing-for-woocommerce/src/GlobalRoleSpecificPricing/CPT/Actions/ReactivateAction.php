@@ -3,6 +3,7 @@
 use MeowCrew\RoleAndCustomerBasedPricing\Core\AdminNotifier;
 use MeowCrew\RoleAndCustomerBasedPricing\Core\ServiceContainerTrait;
 use MeowCrew\RoleAndCustomerBasedPricing\Entity\GlobalPricingRule;
+use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\RoleSpecificPricingCPT;
 use WP_Post;
 
 class ReactivateAction {
@@ -46,6 +47,8 @@ class ReactivateAction {
 
 					try {
 						GlobalPricingRule::save( $rule, $ruleId );
+						
+						RoleSpecificPricingCPT::flushCaches();
 
 						$this->getContainer()->getAdminNotifier()->flash( __( 'The rule reactivated successfully.', 'role-and-customer-based-pricing-for-woocommerce' ), AdminNotifier::SUCCESS, true );
 

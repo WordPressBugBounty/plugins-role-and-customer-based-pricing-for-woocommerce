@@ -3,7 +3,9 @@
 use Exception;
 use Automattic\WooCommerce\Admin\PageController;
 use MeowCrew\RoleAndCustomerBasedPricing\Entity\GlobalPricingRule;
+use MeowCrew\RoleAndCustomerBasedPricing\Core\AdminNotifier;
 use MeowCrew\RoleAndCustomerBasedPricing\Core\ServiceContainerTrait;
+use MeowCrew\RoleAndCustomerBasedPricing\PricingRulesDispatcher;
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Actions\ReactivateAction;
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Actions\SuspendAction;
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Columns\AppliedQuantityRules;
@@ -14,13 +16,15 @@ use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Columns\S
 use WP_Post;
 use MeowCrew\RoleAndCustomerBasedPricing\GlobalRoleSpecificPricing\CPT\Form\Form;
 
-use function is_empty;
-
 class RoleSpecificPricingCPT {
 
 	use ServiceContainerTrait;
 
 	const SLUG = 'rcbp-rule';
+	
+	const SAVE_NONCE_ACTION = 'rcbp_save_global_rule';
+	
+	const SAVE_NONCE_NAME = '_rcbp_global_rule_nonce';
 
 	/**
 	 * Pricing rules
@@ -104,9 +108,13 @@ class RoleSpecificPricingCPT {
 			return $state;
 		}, 10, 2 );
 
-		// Refresh cache for variable product pricing
-		add_action( 'save_post_' . self::SLUG, function () {
-			wc_delete_product_transients();
+		// Refresh cached rules and variable product price transients when rules change
+		add_action( 'save_post_' . self::SLUG, array( __CLASS__, 'flushCaches' ) );
+		
+		add_action( 'before_delete_post', function ( $postId ) {
+			if ( self::SLUG === get_post_type( $postId ) ) {
+				self::flushCaches();
+			}
 		} );
 
 		$this->initInlineActions();
@@ -160,16 +168,24 @@ class RoleSpecificPricingCPT {
 	}
 
 	public function savePricingRule( $ruleId ) {
-		// Save pricing
-		if ( wp_verify_nonce( true, true ) ) {
-			// as phpcs comments at Woo is not available, we have to do such a trash
-			$woo = 'Woo, please add ignoring comments to your phpcs checker';
+		
+		// Only handle submissions of the rule form. Trash, untrash, bulk edit, autosave and programmatic updates skip this.
+		$nonce = isset( $_POST[ self::SAVE_NONCE_NAME ] ) ? sanitize_text_field( wp_unslash( $_POST[ self::SAVE_NONCE_NAME ] ) ) : '';
+		
+		if ( ! wp_verify_nonce( $nonce, self::getSaveNonceAction( $ruleId ) ) ) {
+			return;
 		}
-
-		$postedData = $_POST;
-
+		
+		if ( wp_is_post_autosave( $ruleId ) || wp_is_post_revision( $ruleId ) ) {
+			return;
+		}
+		
+		if ( ! current_user_can( 'edit_post', $ruleId ) ) {
+			return;
+		}
+		
 		$data = array();
-
+		
 		$pricingFields = array(
 			'_rcbp_global_pricing_type',
 			'_rcbp_global_regular_price',
@@ -179,52 +195,70 @@ class RoleSpecificPricingCPT {
 			'_rcbp_global_maximum',
 			'_rcbp_global_group_of',
 		);
-
+		
 		foreach ( $pricingFields as $field ) {
-			if ( ! isset( $postedData[ $field ] ) ) {
-				$data[ $field ] = '';
-			} else if ( ! isset( $postedData[ $field ]['global'] ) ) {
-				$data[ $field ] = '';
-			} else {
-				$data[ $field ] = $postedData[ $field ]['global'];
-			}
+			$data[ $field ] = isset( $_POST[ $field ]['global'] ) ? sanitize_text_field( wp_unslash( $_POST[ $field ]['global'] ) ) : '';
 		}
-
+		
 		$pricingRule = new GlobalPricingRule(
 			$data['_rcbp_global_pricing_type'],
 			wc_format_decimal( $data['_rcbp_global_regular_price'] ),
 			wc_format_decimal( $data['_rcbp_global_sale_price'] ),
 			! empty( $data['_rcbp_global_discount'] ) ? floatval( $data['_rcbp_global_discount'] ) : null,
-			sanitize_text_field( $data['_rcbp_global_minimum'] ),
-			sanitize_text_field( $data['_rcbp_global_maximum'] ),
-			sanitize_text_field( $data['_rcbp_global_group_of'] )
+			$data['_rcbp_global_minimum'],
+			$data['_rcbp_global_maximum'],
+			$data['_rcbp_global_group_of']
 		);
-
+		
 		$existingRoles = wp_roles()->roles;
-
-		$includedCategoriesIds = isset( $postedData['_rps_included_categories'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_categories'] ) ) : array();
-		$includedProductsIds   = isset( $postedData['_rps_included_products'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_products'] ) ) : array();
-		$includedTagsIds       = isset( $postedData['_rps_included_tags'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_tags'] ) ) : array();
-		$includedBrandsIds     = isset( $postedData['_rps_included_brands'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_brands'] ) ) : array();
-
-		$includedUsersRole = isset( $postedData['_rps_included_user_roles'] ) ? array_filter( (array) $postedData['_rps_included_user_roles'], function ( $role ) use ( $existingRoles ) {
+		
+		$includedUsersRole = isset( $_POST['_rps_included_user_roles'] ) ? array_filter( array_map( 'sanitize_text_field', (array) wp_unslash( $_POST['_rps_included_user_roles'] ) ), function ( $role ) use ( $existingRoles ) {
 			return array_key_exists( $role, $existingRoles );
 		} ) : array();
-
-		$includedUsers = isset( $postedData['_rps_included_users'] ) ? array_filter( array_map( 'intval', (array) $postedData['_rps_included_users'] ) ) : array();
-
-		$pricingRule->setIncludedProductCategories( $includedCategoriesIds );
-		$pricingRule->setIncludedProductTags( $includedTagsIds );
-		$pricingRule->setIncludedProductBrands( $includedBrandsIds );
-		$pricingRule->setIncludedProducts( $includedProductsIds );
-		$pricingRule->setIncludedUsers( $includedUsers );
+		
+		$pricingRule->setIncludedProductCategories( $this->getPostedIds( '_rps_included_categories' ) );
+		$pricingRule->setIncludedProductTags( $this->getPostedIds( '_rps_included_tags' ) );
+		$pricingRule->setIncludedProductBrands( $this->getPostedIds( '_rps_included_brands' ) );
+		$pricingRule->setIncludedProducts( $this->getPostedIds( '_rps_included_products' ) );
+		$pricingRule->setIncludedUsers( $this->getPostedIds( '_rps_included_users' ) );
 		$pricingRule->setIncludedUsersRole( $includedUsersRole );
-
+		
+		// Suspension is changed only through the Suspend and Reactivate actions, so keep the stored state
+		$pricingRule->setIsSuspended( GlobalPricingRule::build( $ruleId )->isSuspended() );
+		
 		try {
 			GlobalPricingRule::save( $pricingRule, $ruleId );
 		} catch ( Exception $exception ) {
 			$this->getContainer()->getAdminNotifier()->flash( 'Role specific pricing: ' . $exception->getMessage(), AdminNotifier::ERROR );
 		}
+	}
+	
+	/**
+	 * Nonce action for the rule form, bound to the rule
+	 *
+	 * @param  int  $ruleId
+	 *
+	 * @return string
+	 */
+	public static function getSaveNonceAction( $ruleId ) {
+		return self::SAVE_NONCE_ACTION . '_' . intval( $ruleId );
+	}
+	
+	/**
+	 * Posted list of ids, cleaned. The nonce is verified in savePricingRule().
+	 *
+	 * @param  string  $key
+	 *
+	 * @return int[]
+	 */
+	protected function getPostedIds( $key ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( ! isset( $_POST[ $key ] ) ) {
+			return array();
+		}
+		
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
+		return array_filter( array_map( 'intval', (array) wp_unslash( $_POST[ $key ] ) ) );
 	}
 
 	public function renderBlankState( $which ) {
@@ -372,6 +406,19 @@ class RoleSpecificPricingCPT {
 		return in_array( $pagenow, array( 'post-new.php' ) );
 	}
 
+	/**
+	 * Drop cached rules and WooCommerce price transients so rule changes show up immediately
+	 */
+	public static function flushCaches() {
+		self::$globalRules = null;
+		
+		PricingRulesDispatcher::resetCache();
+		
+		if ( function_exists( 'wc_delete_product_transients' ) ) {
+			wc_delete_product_transients();
+		}
+	}
+	
 	public static function getGlobalRules( $withValidPricing = true ) {
 
 		if ( ! is_null( self::$globalRules ) ) {

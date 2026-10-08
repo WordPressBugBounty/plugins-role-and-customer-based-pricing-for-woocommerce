@@ -13,7 +13,7 @@ class RolesTable extends WP_List_Table {
 	 */
 	private $deleteAction;
 
-	public function __construct( $args = array(), RoleManagementPageAction $deleteAction ) {
+	public function __construct( $args = array(), ?RoleManagementPageAction $deleteAction = null ) {
 		parent::__construct( $args );
 		$this->deleteAction = $deleteAction;
 	}

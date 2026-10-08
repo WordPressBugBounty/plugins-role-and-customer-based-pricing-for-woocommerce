@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit00e8679be6824c83a88ea5e130babba2
+class ComposerStaticInitf97aa826887c2c8cde58deb870292b3f
 {
     public static $prefixLengthsPsr4 = array (
         'M' => 
@@ -22,14 +22,69 @@ class ComposerStaticInit00e8679be6824c83a88ea5e130babba2
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Admin\\Admin' => __DIR__ . '/../..' . '/src/Admin/Admin.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Admin\\ProductPage\\PricingRulesManager' => __DIR__ . '/../..' . '/src/Admin/ProductPage/PricingRulesManager.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Admin\\ProductPage\\Product' => __DIR__ . '/../..' . '/src/Admin/ProductPage/Product.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Admin\\ProductPage\\RoleSpecificPricingTab' => __DIR__ . '/../..' . '/src/Admin/ProductPage/RoleSpecificPricingTab.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Admin\\ProductPage\\RoleSpecificVariableProduct' => __DIR__ . '/../..' . '/src/Admin/ProductPage/RoleSpecificVariableProduct.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Core\\AdminNotifier' => __DIR__ . '/../..' . '/src/Core/AdminNotifier.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Core\\FileManager' => __DIR__ . '/../..' . '/src/Core/FileManager.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Core\\Logger' => __DIR__ . '/../..' . '/src/Core/Logger.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Core\\ServiceContainer' => __DIR__ . '/../..' . '/src/Core/ServiceContainer.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Core\\ServiceContainerTrait' => __DIR__ . '/../..' . '/src/Core/ServiceContainerTrait.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Entity\\GlobalPricingRule' => __DIR__ . '/../..' . '/src/Entity/GlobalPricingRule.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Entity\\PricingRule' => __DIR__ . '/../..' . '/src/Entity/PricingRule.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Actions\\ReactivateAction' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Actions/ReactivateAction.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Actions\\SuspendAction' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Actions/SuspendAction.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Columns\\AppliedCustomers' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Columns/AppliedCustomers.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Columns\\AppliedProducts' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Columns/AppliedProducts.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Columns\\AppliedQuantityRules' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Columns/AppliedQuantityRules.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Columns\\Pricing' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Columns/Pricing.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Columns\\Status' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Columns/Status.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Form\\Form' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Form/Form.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Form\\FormTab' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Form/FormTab.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Form\\Tabs\\Pricing' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Form/Tabs/Pricing.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Form\\Tabs\\ProductAndCategories' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Form/Tabs/ProductAndCategories.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\Form\\Tabs\\UsersAndRoles' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/Form/Tabs/UsersAndRoles.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\GlobalRoleSpecificPricing\\CPT\\RoleSpecificPricingCPT' => __DIR__ . '/../..' . '/src/GlobalRoleSpecificPricing/CPT/RoleSpecificPricingCPT.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Integrations\\Integrations' => __DIR__ . '/../..' . '/src/Integrations/Integrations.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Integrations\\Plugins\\SmartCoupons' => __DIR__ . '/../..' . '/src/Integrations/Plugins/SmartCoupons.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Integrations\\Plugins\\WCPA' => __DIR__ . '/../..' . '/src/Integrations/Plugins/WCPA.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Integrations\\Plugins\\WombatProductAddons' => __DIR__ . '/../..' . '/src/Integrations/Plugins/WombatProductAddons.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Integrations\\Plugins\\WooCommerceProductAddons' => __DIR__ . '/../..' . '/src/Integrations/Plugins/WooCommerceProductAddons.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\PricingRulesDispatcher' => __DIR__ . '/../..' . '/src/PricingRulesDispatcher.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleAndCustomerBasedPricingPlugin' => __DIR__ . '/../..' . '/src/RoleAndCustomerBasedPricingPlugin.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\Actions\\DeleteRoleAction' => __DIR__ . '/../..' . '/src/RoleManagement/Actions/DeleteRoleAction.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\Actions\\NewRoleAction' => __DIR__ . '/../..' . '/src/RoleManagement/Actions/NewRoleAction.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\Actions\\RoleManagementPageAction' => __DIR__ . '/../..' . '/src/RoleManagement/Actions/RoleManagementPageAction.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\RoleManagement' => __DIR__ . '/../..' . '/src/RoleManagement/RoleManagement.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\RoleManagementPage' => __DIR__ . '/../..' . '/src/RoleManagement/RoleManagementPage.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\RoleManagement\\RolesTable' => __DIR__ . '/../..' . '/src/RoleManagement/RolesTable.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Services\\NonLoggedUsersService' => __DIR__ . '/../..' . '/src/Services/NonLoggedUsersService.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Services\\ProductPricingService' => __DIR__ . '/../..' . '/src/Services/ProductPricingService.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Services\\Select2LookupService' => __DIR__ . '/../..' . '/src/Services/Select2LookupService.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\DescribedRadioOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/DescribedRadioOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\PremiumImportOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/PremiumImportOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\PremiumSelectOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/PremiumSelectOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\RoleBasedTaxesOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/RoleBasedTaxesOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\SwitchCheckboxOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/SwitchCheckboxOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\CustomOptions\\TemplateOption' => __DIR__ . '/../..' . '/src/Settings/CustomOptions/TemplateOption.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Sections\\AbstractSection' => __DIR__ . '/../..' . '/src/Settings/Sections/AbstractSection.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Sections\\ImportExportSection' => __DIR__ . '/../..' . '/src/Settings/Sections/ImportExportSection.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Sections\\MainSection' => __DIR__ . '/../..' . '/src/Settings/Sections/MainSection.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Sections\\PricingSection' => __DIR__ . '/../..' . '/src/Settings/Sections/PricingSection.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Sections\\RoleBasedTaxesSection' => __DIR__ . '/../..' . '/src/Settings/Sections/RoleBasedTaxesSection.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Settings\\Settings' => __DIR__ . '/../..' . '/src/Settings/Settings.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Utils\\Formatter' => __DIR__ . '/../..' . '/src/Utils/Formatter.php',
+        'MeowCrew\\RoleAndCustomerBasedPricing\\Utils\\Strings' => __DIR__ . '/../..' . '/src/Utils/Strings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit00e8679be6824c83a88ea5e130babba2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit00e8679be6824c83a88ea5e130babba2::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit00e8679be6824c83a88ea5e130babba2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf97aa826887c2c8cde58deb870292b3f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf97aa826887c2c8cde58deb870292b3f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf97aa826887c2c8cde58deb870292b3f::$classMap;
 
         }, null, ClassLoader::class);
     }

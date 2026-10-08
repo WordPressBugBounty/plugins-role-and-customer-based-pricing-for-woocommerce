@@ -51,6 +51,8 @@ class SuspendAction {
 					try {
 						GlobalPricingRule::save( $rule, $ruleId );
 						
+						RoleSpecificPricingCPT::flushCaches();
+						
 						$this->getContainer()->getAdminNotifier()->flash( __( 'The rule suspended successfully.',
 							'role-and-customer-based-pricing-for-woocommerce' ), AdminNotifier::SUCCESS, true );
 						

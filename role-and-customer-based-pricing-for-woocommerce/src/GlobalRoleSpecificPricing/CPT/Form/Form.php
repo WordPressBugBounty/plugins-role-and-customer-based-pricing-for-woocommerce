@@ -48,11 +48,6 @@ class Form {
 			/**
 			* Externals
 			 */
-			/* do not display any notices on rule creation */
-			.wrap .notice:not(.notice-success) {
-				display: none
-			}
-
 			.rcbp-global-pricing-rule-form .woocommerce-help-tip {
 				margin-left: 5px;
 			}
@@ -241,10 +236,22 @@ class Form {
 	protected function render( WP_Post $post ) {
 
 		$this->includeAssets();
-
-		if ( ! $this->isNewRule() && ! $this->getPricingRuleInstance( $post )->isValidPricing() ) {
-			$this->tabs[0]->renderHint( __( 'The pricing rule does not affect prices. The rule will be skipped.',
+		
+		wp_nonce_field( RoleSpecificPricingCPT::getSaveNonceAction( $post->ID ), RoleSpecificPricingCPT::SAVE_NONCE_NAME );
+		
+		$hintTab = reset( $this->tabs );
+		
+		if ( $hintTab && ! $this->isNewRule() ) {
+			
+			if ( $this->getPricingRuleInstance( $post )->isSuspended() ) {
+				$hintTab->renderHint( __( 'This rule is suspended and does not affect prices. Reactivate it from the pricing rules list.',
 					'role-and-customer-based-pricing-for-woocommerce' ), array( 'custom_class' => 'rcbp-global-pricing-rule-hint--top-level' ) );
+			}
+			
+			if ( ! $this->getPricingRuleInstance( $post )->isValidPricing() ) {
+				$hintTab->renderHint( __( 'The pricing rule does not affect prices. The rule will be skipped.',
+					'role-and-customer-based-pricing-for-woocommerce' ), array( 'custom_class' => 'rcbp-global-pricing-rule-hint--top-level' ) );
+			}
 		}
 
 		?>

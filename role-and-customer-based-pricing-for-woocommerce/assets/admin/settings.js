@@ -1,13 +1,1 @@
-jQuery(document).ready(function ($) {
-    let addToCartNoticeForNonLoggedInUsers = $('[name=role_and_customer_based_pricing_non_logged_in_users_purchase_message]').closest('tr');
-
-    $('[name=role_and_customer_based_pricing_prevent_purchase_for_non_logged_in_users]').on('change', function () {
-
-        if ($(this).is(':checked')) {
-            addToCartNoticeForNonLoggedInUsers.show();
-        } else {
-            addToCartNoticeForNonLoggedInUsers.hide();
-        }
-
-    }).trigger('change');
-});
+jQuery(document).ready(function(e){let n=e("[name=role_and_customer_based_pricing_non_logged_in_users_purchase_message]").closest("tr");e("[name=role_and_customer_based_pricing_prevent_purchase_for_non_logged_in_users]").on("change",function(){e(this).is(":checked")?n.show():n.hide()}).trigger("change")});

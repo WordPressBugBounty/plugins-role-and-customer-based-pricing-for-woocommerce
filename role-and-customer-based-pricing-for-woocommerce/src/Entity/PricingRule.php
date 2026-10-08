@@ -68,9 +68,16 @@ class PricingRule {
 	/**
 	 * Original product price
 	 *
-	 * @var float
+	 * @var float|null
 	 */
 	private $originalProductPrice;
+	
+	/**
+	 * Whether the original product price has been resolved
+	 *
+	 * @var bool
+	 */
+	private $originalProductPriceResolved = false;
 	
 	/**
 	 * PricingRule constructor.
@@ -112,20 +119,40 @@ class PricingRule {
 	/**
 	 * Set original product price
 	 *
-	 * @param $price
+	 * @param  string|float|null  $price  Raw price, empty when the product has no price
 	 */
 	public function setOriginalProductPrice( $price ) {
-		$this->originalProductPrice = $price;
+		$this->originalProductPrice         = Strings::IsNullOrEmpty( $price ) ? null : (float) $price;
+		$this->originalProductPriceResolved = true;
 	}
 	
+	/**
+	 * Resolve the base price from a product, honouring the "use regular price for discounts" setting
+	 *
+	 * @param  WC_Product  $product
+	 */
+	public function setOriginalProductPriceFromProduct( WC_Product $product ) {
+		if ( $this->getContainer()->getSettings()->useRegularPriceToCalculateDiscounts() ) {
+			$this->setOriginalProductPrice( $product->get_regular_price( 'edit' ) );
+		} else {
+			$this->setOriginalProductPrice( $product->get_price( 'edit' ) );
+		}
+	}
+	
+	/**
+	 * Base price for percentage discounts
+	 *
+	 * @return float|null Null when the product has no price
+	 */
 	public function getOriginalProductPrice() {
 		
-		if ( is_null( $this->originalProductPrice ) ) {
+		if ( ! $this->originalProductPriceResolved ) {
+			$product = $this->getProduct();
 			
-			if ( $this->getContainer()->getSettings()->useRegularPriceToCalculateDiscounts() ) {
-				$this->originalProductPrice = (float) $this->getProduct()->get_regular_price( 'edit' );
+			if ( $product ) {
+				$this->setOriginalProductPriceFromProduct( $product );
 			} else {
-				$this->originalProductPrice = (float) $this->getProduct()->get_price( 'edit' );
+				$this->setOriginalProductPrice( null );
 			}
 		}
 		
@@ -140,7 +167,12 @@ class PricingRule {
 			
 			$productPrice = $this->getOriginalProductPrice();
 			
-			$price = ( $productPrice * ( ( 100 - $discount ) / 100 ) );
+			if ( null === $productPrice ) {
+				// The product has no price to discount, so the rule cannot produce one
+				$price = null;
+			} else {
+				$price = round( $productPrice * ( ( 100 - $discount ) / 100 ), wc_get_price_decimals() );
+			}
 			
 		} else {
 			$price = $this->getRegularPrice();

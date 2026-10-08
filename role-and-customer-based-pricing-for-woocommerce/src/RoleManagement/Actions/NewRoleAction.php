@@ -20,7 +20,7 @@ class NewRoleAction extends RoleManagementPageAction {
 			}
 		}
 
-		add_role( $roleName, $roleName, $newCapabilities );
+		add_role( $this->getRoleSlug(), $roleName, $newCapabilities );
 
 		$this->getContainer()->getAdminNotifier()->flash( esc_html__( 'The role has been added successfully.', 'role-and-customer-based-pricing-for-woocommerce' ), 'success', true );
 
@@ -30,11 +30,15 @@ class NewRoleAction extends RoleManagementPageAction {
 
 	public function validate() {
 
-		if ( ! $this->getRoleName() ) {
+		if ( ! $this->getRoleName() || ! $this->getRoleSlug() ) {
 			throw new Exception( esc_html__( 'Role name is required.', 'role-and-customer-based-pricing-for-woocommerce' ) );
 		}
 
 		$roles = wp_roles()->roles;
+
+		if ( array_key_exists( $this->getRoleSlug(), $roles ) ) {
+			throw new Exception( esc_html__( 'A role with this name already exists.', 'role-and-customer-based-pricing-for-woocommerce' ) );
+		}
 
 		if ( $this->getInheritedRole() && ! array_key_exists( $this->getInheritedRole(), $roles ) ) {
 			throw new Exception( esc_html__( 'Invalid inherited role.', 'role-and-customer-based-pricing-for-woocommerce' ) );
@@ -45,6 +49,24 @@ class NewRoleAction extends RoleManagementPageAction {
 
 	public function getRoleName() {
 		return isset( $_REQUEST['role_name'] ) ? sanitize_text_field( $_REQUEST['role_name'] ) : false;
+	}
+
+	/**
+	 * Role key: lowercase, underscores instead of spaces, no other special characters.
+	 * Falls back to a URL-safe title for names without Latin characters.
+	 *
+	 * @return string
+	 */
+	public function getRoleSlug() {
+		$roleName = $this->getRoleName();
+
+		if ( ! $roleName ) {
+			return '';
+		}
+
+		$slug = sanitize_key( str_replace( ' ', '_', $roleName ) );
+
+		return $slug ? $slug : sanitize_title( $roleName );
 	}
 
 	public function getInheritedRole() {

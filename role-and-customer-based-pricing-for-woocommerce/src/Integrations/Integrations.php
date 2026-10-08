@@ -13,7 +13,7 @@ class Integrations {
 	
 	public function init() {
 		
-		$plugins = apply_filters( 'tiered_pricing_table/integrations/plugins', array(
+		$plugins = apply_filters( 'role_customer_specific_pricing/integrations/plugins', array(
 			WooCommerceProductAddons::class,
 			SmartCoupons::class,
 			WCPA::class,

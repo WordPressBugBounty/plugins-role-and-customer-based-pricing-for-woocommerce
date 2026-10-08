@@ -2,9 +2,9 @@
 Contributors: meowcrew, freemius
 Tags: Role based pricing, prices by user role, wholesale, woocommerce, dynamic price
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GNU General Public License v2
 License URI: https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
 Create individual pricing for customers based on their role or account. Works with all types of products along with Import-Export tools
@@ -70,6 +70,24 @@ You can find instructions on how to mass import wholesale and role-based prices 
 13. Taxes settings based on user role
 
 == Changelog ==
+
+= 2.1.0 [2026-10-08] =
+* Fix: Trashing, restoring or bulk editing a global pricing rule cleared its settings and reactivated suspended rules.
+* Fix: Customer-specific percentage rules on variable products used the parent product price for variations.
+* Fix: Admin screens, Quick Edit, CSV export and the REST API showed role-based prices and could save them to products.
+* Fix: Global pricing rules ignored the setting to always use the regular price for percentage discounts.
+* Fix: Variable subscriptions did not inherit pricing rules from the parent product.
+* Fix: Suspending or deleting a global rule did not refresh cached variable product prices.
+* Fix: Quantity rules counted the wrong cart quantity for variations.
+* Fix: Quantity-only rules were missing from the WooCommerce CSV export.
+* Fix: Percentage rules made products without a price free.
+* Improvement: Percentage prices are rounded to the store price decimals.
+* Improvement: Faster price calculation on catalog and product pages.
+* Improvement: Custom role names get a clean role key and duplicate names are rejected.
+* Improvement: The pricing rule screen shows admin notices again and marks suspended rules.
+* Improvement: Integrations filter renamed to role_customer_specific_pricing/integrations/plugins.
+* Improvement: Freemius SDK 2.13.4.
+* Improvement: Compatibility with WordPress 7.1 and WooCommerce 11.2.
 
 2026-06-26 - version 2.0.0
 * New: Redesign for global pricing rule form.

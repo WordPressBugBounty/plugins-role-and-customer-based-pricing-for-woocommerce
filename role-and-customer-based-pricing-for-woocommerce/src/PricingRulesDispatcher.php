@@ -10,7 +10,7 @@ class PricingRulesDispatcher {
 	/**
 	 * Dispatched rules. Used for the cache
 	 *
-	 * @var PricingRule[]
+	 * @var array<string, PricingRule|false>
 	 */
 	protected static $dispatchedRules = array();
 	
@@ -44,10 +44,16 @@ class PricingRulesDispatcher {
 	 */
 	protected static function _dispatchRule( $productId, $parentId = null, $user = null, $validatePricing = true ) {
 		
-		$cacheKey = $productId . '_' . $validatePricing ? 1 : 0;
+		$user = $user instanceof WP_User ? $user : wp_get_current_user();
+		
+		if ( ! $user ) {
+			$user = new WP_User( 0 );
+		}
+		
+		$cacheKey = $productId . '_' . ( $validatePricing ? 1 : 0 ) . '_' . $user->ID;
 		
 		// Cache
-		if ( array_key_exists( $productId . $validatePricing, self::$dispatchedRules ) ) {
+		if ( array_key_exists( $cacheKey, self::$dispatchedRules ) ) {
 			return self::$dispatchedRules[ $cacheKey ];
 		}
 		
@@ -58,73 +64,78 @@ class PricingRulesDispatcher {
 				'simple',
 				'course',
 				'subscription',
-				'subscription-variation',
-				'course',
+				'subscription_variation',
 			) ) ) {
 			
 			return false;
 		}
 		
-		$parentId = $parentId ? $parentId : $product->get_parent_id();
-		$user     = $user instanceof WP_User ? $user : wp_get_current_user();
-		
-		if ( ! $user ) {
-			$user = new WP_User( 0 );
-		}
+		$parentId    = $parentId ? $parentId : $product->get_parent_id();
+		$isVariation = $product->is_type( 'variation' );
 		
 		$customerSpecificRules = PricingRulesManager::getProductCustomerSpecificPricingRules( $productId,
 			$validatePricing );
 		
-		if ( empty( $customerSpecificRules ) && $product->get_type() === 'variation' ) {
+		if ( empty( $customerSpecificRules ) && $isVariation ) {
 			$customerSpecificRules = PricingRulesManager::getProductCustomerSpecificPricingRules( $parentId,
 				$validatePricing );
 		}
-
+		
 		foreach ( $customerSpecificRules as $userId => $rule ) {
 			if ( intval( $userId ) === $user->ID ) {
+				// A rule inherited from the parent product must calculate prices from the variation
+				$rule->setProductId( $productId );
+				
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-
+				
 				return $rule;
 			}
 		}
-
+		
 		$roleSpecificRules = PricingRulesManager::getProductRoleSpecificPricingRules( $productId, $validatePricing );
 		
-		if ( empty( $roleSpecificRules ) && $product->get_type() === 'variation' ) {
+		if ( empty( $roleSpecificRules ) && $isVariation ) {
 			$roleSpecificRules = PricingRulesManager::getProductRoleSpecificPricingRules( $parentId, $validatePricing );
 		}
-
+		
 		foreach ( $roleSpecificRules as $role => $rule ) {
 			if ( in_array( $role, $user->roles ) ) {
-				// in case there is a variation. By default, rule is tied to the parent product
+				// A rule inherited from the parent product must calculate prices from the variation
 				$rule->setProductId( $productId );
-
+				
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-
+				
 				return $rule;
 			}
 		}
-
-		// role-and-customer-based-pricing-for-woocommerce: make it as a generator to save performance
+		
 		$globalRules = RoleSpecificPricingCPT::getGlobalRules( $validatePricing );
-
-		foreach ( $globalRules as $rule ) {
-
-			if ( $rule->matchRequirements( $user, $product ) ) {
-
+		
+		foreach ( $globalRules as $globalRule ) {
+			
+			if ( $globalRule->matchRequirements( $user, $product ) ) {
+				
+				// Global rule instances are shared between products within the request, so work on a copy
+				$rule = clone $globalRule;
+				
 				$rule->setAppliedProductId( $productId );
-
-				$rule->setOriginalProductPrice( floatval( $product->get_price( 'edit' ) ) );
-
+				$rule->setOriginalProductPriceFromProduct( $product );
+				
 				self::$dispatchedRules[ $cacheKey ] = $rule;
-
+				
 				return $rule;
 			}
 		}
-
+		
 		self::$dispatchedRules[ $cacheKey ] = false;
-
+		
 		return false;
 	}
-
+	
+	/**
+	 * Drop the dispatched rules cache
+	 */
+	public static function resetCache() {
+		self::$dispatchedRules = array();
+	}
 }

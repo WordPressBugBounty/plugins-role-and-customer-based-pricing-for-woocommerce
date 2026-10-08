@@ -14,7 +14,7 @@ if ( !function_exists( 'racbpfw_fs' ) ) {
             $racbpfw_fs = fs_dynamic_init( array(
                 'id'               => '9596',
                 'slug'             => 'role-and-customer-based-pricing-for-woocommerce',
-                'premium_slug'     => 'age-verification-for-woocommerce-premium',
+                'premium_slug'     => 'role-and-customer-based-pricing-for-woocommerce-premium',
                 'type'             => 'plugin',
                 'public_key'       => 'pk_7b9f024ab59d07769da18fd2f7824',
                 'is_premium'       => false,
